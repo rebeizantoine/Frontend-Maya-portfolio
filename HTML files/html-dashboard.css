@@ -15,6 +15,7 @@ button {
     width: 120px;
     text-align: center;
     text-transform: uppercase;
+    margin: 10px;
 }
 
 button:hover {
@@ -40,6 +41,11 @@ fieldset {
     border: 2px solid #846F63;
     border-radius: 35px;
     padding: 20px 45px;
+}
+
+input,
+textarea {
+    margin: 5px;
 }
 
 /* Header */
@@ -115,4 +121,37 @@ fieldset {
     align-items: flex-start;
 }
 
-/* Experience section */
+/* Projects section */
+
+.project-title,
+.project-subtitle,
+.project-description,
+.project-video,
+.project-deployed,
+.project-picture {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project-title label,
+.project-subtitle label,
+.project-description label,
+.project-video label,
+.project-deployed label,
+.project-picture label {
+    flex: 1;
+}
+
+.project-title input,
+.project-subtitle input,
+.project-description input,
+.project-video input,
+.project-deployed input,
+.project-picture input {
+    flex: 3;
+    margin-right: 10px;
+    /* Add spacing between labels and inputs */
+    padding: 5px;
+    /* Adjust input padding as needed */
+}

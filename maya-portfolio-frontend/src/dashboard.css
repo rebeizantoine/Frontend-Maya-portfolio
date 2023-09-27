@@ -1,0 +1,157 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #846F63;
+}
+
+button {
+    background-color: #846F63;
+    border: 2px solid #846F63;
+    color: #F5EBE0;
+    padding: 8px 15px;
+    border-radius: 35px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: transparent;
+    border: 2px solid #846F63;
+    color: #846F63;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 130px;
+    padding: 20px 0px;
+    text-transform: uppercase
+}
+
+p {
+    font-size: 20px;
+}
+
+fieldset {
+    color: #846F63;
+    border: 2px solid #846F63;
+    border-radius: 35px;
+    padding: 20px 45px;
+}
+
+input,
+textarea {
+    margin: 5px;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo-maya {
+    height: 50px;
+    margin-left: 100px;
+    padding: 15px 0px;
+}
+
+.header p {
+    margin: auto;
+}
+
+.log-out {
+    margin-right: 100px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 120px;
+    background: #846F63;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    border: 2px solid #846F63;
+    font-size: 20px;
+    color: #F5EBE0;
+    display: block;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #F5EBE0;
+    border: 2px solid #846F63;
+    border-radius: 35px;
+    color: #846F63;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-left: 140px;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+/* CV section */
+
+.upload-cv {
+    display: flex;
+    align-items: center;
+}
+
+/* About section */
+
+.edit-about {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Projects section */
+
+.project-title,
+.project-subtitle,
+.project-description,
+.project-video,
+.project-deployed,
+.project-picture {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project-title label,
+.project-subtitle label,
+.project-description label,
+.project-video label,
+.project-deployed label,
+.project-picture label {
+    flex: 1;
+}
+
+.project-title input,
+.project-subtitle input,
+.project-description input,
+.project-video input,
+.project-deployed input,
+.project-picture input {
+    flex: 3;
+    margin-right: 10px;
+    /* Add spacing between labels and inputs */
+    padding: 5px;
+    /* Adjust input padding as needed */
+}
