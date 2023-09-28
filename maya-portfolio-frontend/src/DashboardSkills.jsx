@@ -1,4 +1,5 @@
 import React from 'react';
+import replaceIcon from './replace-icon.png'
 
 function DashboardSkills() {
   return (
@@ -16,7 +17,8 @@ function DashboardSkills() {
           </div>
           <div className="skill-icon">
             <label>Icon</label>
-            <input type="text" />
+            <img src={replaceIcon} alt="skill-icon" className='replace-icon' />
+            <input type="file" accept="image/*" className='upload-image' />
             <button>Upload</button>
             <button>Save</button>
           </div>
@@ -34,7 +36,8 @@ function DashboardSkills() {
           </div>
           <div className="skill-icon">
             <label>Icon</label>
-            <input type="text" />
+            <img src={replaceIcon} alt="skill-icon" className='replace-icon' />
+            <input type="file" accept="image/*" className='upload-image' />
             <button>Upload</button>
             <button>Save</button>
           </div>

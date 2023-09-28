@@ -69,6 +69,11 @@ textarea {
     margin-right: 100px;
 }
 
+.hr-header{
+    width:100%;
+    border: 2px solid #846F63;
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -79,6 +84,7 @@ textarea {
     background: #846F63;
     overflow-x: hidden;
     padding: 8px 0;
+    bottom: 0px;
 }
 
 .sidebar a {
@@ -109,6 +115,10 @@ textarea {
 
 /* CV section */
 
+.cv-fieldset {
+    margin-top: 40px;
+}
+
 .upload-cv {
     display: flex;
     align-items: center;
@@ -119,6 +129,17 @@ textarea {
 .edit-about {
     display: flex;
     align-items: flex-start;
+}
+
+/* Skills section */
+
+.skill-icon {
+    display: flex;
+    align-items: flex-start;
+}
+
+.replace-icon {
+    margin: 0px 6px;
 }
 
 /* Projects section */
@@ -151,7 +172,10 @@ textarea {
 .project-picture input {
     flex: 3;
     margin-right: 10px;
-    /* Add spacing between labels and inputs */
     padding: 5px;
-    /* Adjust input padding as needed */
+}
+
+.project-picture{
+    display:flex; 
+    align-items: flex-start;
 }

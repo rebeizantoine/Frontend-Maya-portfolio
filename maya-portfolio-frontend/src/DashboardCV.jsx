@@ -2,11 +2,12 @@ import React from 'react';
 
 function DashboardCV() {
   return (
-    <fieldset>
+    <fieldset className='cv-fieldset'>
       <div className="cv" id="cv">
         <h1>CV</h1>
         <div className="upload-cv">
-          <p>Upload your CV</p>
+          <p>Upload your CV (pdf file)</p>
+          <input type="file" accept=".pdf" />
           <button>Upload</button>
           <button>Save</button>
         </div>

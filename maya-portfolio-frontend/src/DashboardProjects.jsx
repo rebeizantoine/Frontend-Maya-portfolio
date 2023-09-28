@@ -1,4 +1,5 @@
 import React from 'react';
+import replacePicture from './replace-picture.png'
 
 function DashboardProjects() {
   return (
@@ -45,31 +46,41 @@ function DashboardProjects() {
           </div>
           <div className="project-picture">
             <label>Main picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 2</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 3</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 4</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Mobile picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -115,31 +126,41 @@ function DashboardProjects() {
           </div>
           <div className="project-picture">
             <label>Main picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 2</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 3</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 4</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Mobile picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -185,31 +206,41 @@ function DashboardProjects() {
           </div>
           <div className="project-picture">
             <label>Main picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 2</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 3</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 4</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Mobile picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -255,31 +286,41 @@ function DashboardProjects() {
           </div>
           <div className="project-picture">
             <label>Main picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 2</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 3</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 4</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Mobile picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -325,31 +366,41 @@ function DashboardProjects() {
           </div>
           <div className="project-picture">
             <label>Main picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 2</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 3</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Picture 4</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
           <div className="project-picture">
             <label>Mobile picture</label>
-            <input type="text" />
+            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
+            <input type="file" accept="image/*" className='upload-image' />
+            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
