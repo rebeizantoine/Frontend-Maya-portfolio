@@ -1,0 +1,220 @@
+.topside {
+    margin-left: 170px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.topside h1 {
+    color: #846F63;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Roboto;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px;
+    /* 140% */
+    letter-spacing: -2px;
+}
+
+
+.topside h3 {
+    color: #846F63;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 70px;
+    /* 280% */
+    letter-spacing: -1px;
+    margin-top: -30px;
+
+}
+
+/* Add this to your CSS file (vitalblood.css) */
+
+.image-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    /* Set the maximum width as needed */
+    margin: 0 auto;
+    /* Center the slider */
+    margin-left: 35%;
+}
+
+.slider {
+    width: 100%;
+    opacity: 100%;
+    transition: opacity 0.5s ease;
+    /* Add smooth transition effect */
+    cursor: pointer;
+    /* Change cursor to a pointer when hovering over images */
+}
+
+.slider:hover {
+    opacity: 1;
+    /* Show the slide on hover */
+}
+
+.slider:first-child {
+    opacity: 1;
+    /* Show the first slide initially */
+}
+
+.slider:hover {
+    opacity: 1;
+    /* Show the slide on hover */
+}
+
+
+.slider img {
+    width: 925px;
+    height: 400px;
+    margin-left: 10%;
+    margin-left: 32%;
+    border-radius: 35px;
+
+}
+
+.image2 img {
+    width: 200px;
+    height: 350px;
+    margin-top: -15%;
+    margin-left: 30%;
+
+
+}
+
+
+
+.gradient-background {
+    background: linear-gradient(to bottom, #F5EBE0, white);
+    margin-top: 60px;
+}
+
+.textportfolioclient {
+    width: 1000px;
+    height: 200px;
+    color: #7E5C3B;
+    text-align: justify;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    /* 28px */
+    letter-spacing: -0.4px;
+    margin-left: 25%;
+    margin-top: 15%;
+}
+
+.links-single a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #846f63;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #846f63;
+    border-radius: 35px;
+    padding: 15px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Roboto;
+    width: 150px;
+    height: 32px;
+    font-weight: 700;
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+
+
+
+}
+
+.links-single {
+    width: 300px;
+    margin-top: -20%;
+    margin-left: 150px;
+}
+
+.portfolioclientproject {
+    margin-top: 100px;
+}
+
+.topside {
+    margin-left: 170px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .topside {
+        margin-left: 10px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .topside {
+        margin-left: 10px;
+    }
+
+    .topside h1 {
+        font-size: 30px;
+    }
+
+    .topside h3 {
+        font-size: 16px;
+        margin-top: -20px;
+    }
+
+
+    .image-slider {
+        margin-left: 0;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .image2 img {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .textcommerce {
+        width: 100%;
+        font-size: 16px;
+        line-height: 120%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .links-single {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .links-single a {
+        margin-left: 100px;
+        /* Add a 100px margin to the left */
+    }
+}
