@@ -8,7 +8,6 @@ function DashboardCV() {
         <div className="upload-cv">
           <p>Upload your CV (pdf file)</p>
           <input type="file" accept=".pdf" />
-          <button>Upload</button>
           <button>Save</button>
         </div>
       </div>

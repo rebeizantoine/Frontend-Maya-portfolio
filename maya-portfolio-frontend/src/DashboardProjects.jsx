@@ -48,7 +48,6 @@ function DashboardProjects() {
             <label>Main picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -56,7 +55,6 @@ function DashboardProjects() {
             <label>Picture 2</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -64,7 +62,6 @@ function DashboardProjects() {
             <label>Picture 3</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -72,7 +69,6 @@ function DashboardProjects() {
             <label>Picture 4</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -80,7 +76,6 @@ function DashboardProjects() {
             <label>Mobile picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -128,7 +123,6 @@ function DashboardProjects() {
             <label>Main picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -136,7 +130,6 @@ function DashboardProjects() {
             <label>Picture 2</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -144,7 +137,6 @@ function DashboardProjects() {
             <label>Picture 3</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -152,7 +144,6 @@ function DashboardProjects() {
             <label>Picture 4</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -160,7 +151,6 @@ function DashboardProjects() {
             <label>Mobile picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -208,7 +198,6 @@ function DashboardProjects() {
             <label>Main picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -216,7 +205,6 @@ function DashboardProjects() {
             <label>Picture 2</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -224,7 +212,6 @@ function DashboardProjects() {
             <label>Picture 3</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -232,7 +219,6 @@ function DashboardProjects() {
             <label>Picture 4</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -240,7 +226,6 @@ function DashboardProjects() {
             <label>Mobile picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -288,7 +273,6 @@ function DashboardProjects() {
             <label>Main picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -296,7 +280,6 @@ function DashboardProjects() {
             <label>Picture 2</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -304,7 +287,6 @@ function DashboardProjects() {
             <label>Picture 3</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -312,7 +294,6 @@ function DashboardProjects() {
             <label>Picture 4</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -320,7 +301,6 @@ function DashboardProjects() {
             <label>Mobile picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -368,7 +348,6 @@ function DashboardProjects() {
             <label>Main picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -376,7 +355,6 @@ function DashboardProjects() {
             <label>Picture 2</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -384,7 +362,6 @@ function DashboardProjects() {
             <label>Picture 3</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -392,7 +369,6 @@ function DashboardProjects() {
             <label>Picture 4</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
@@ -400,7 +376,6 @@ function DashboardProjects() {
             <label>Mobile picture</label>
             <img src={replacePicture} alt="skill-icon" className='replace-picture' />
             <input type="file" accept="image/*" className='upload-image' />
-            <button>Upload</button>
             <button>Delete</button>
             <button>Save</button>
           </div>
