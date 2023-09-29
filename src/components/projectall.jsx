@@ -12,31 +12,31 @@ const Projectall = () => {
       <h1>PROJECTS</h1>
 
       <div className="projects-container">
-        <Link to="/project1">
+        <Link to="/project1" target="_blank">
           <div className="single-project">
             <img className="project-picture" src={image1} alt="type of website" />
             <span className="alt-text-project">Type of website <br />View details</span>
           </div>
         </Link>
-        <Link to="/project2">
+        <Link to="/project2" target="_blank">
           <div className="single-project">
             <img className="project-picture" src={image2} alt="E-commerce" />
             <span className="alt-text-project">E-commerce <br />View details</span>
           </div>
         </Link>
-        <Link to="/project3">
+        <Link to="/project3" target="_blank">
           <div className="single-project">
             <img className="project-picture" src={image3} alt="Learning Management System" />
             <span className="alt-text-project">Learning Management System <br />View details</span>
           </div>
         </Link>
-        <Link to="/project4">
+        <Link to="/project4" target="_blank">
           <div className="single-project">
             <img className="project-picture" src={image4} alt="Portfolio" />
             <span className="alt-text-project">Portfolio <br />View details</span>
           </div>
         </Link>
-        <Link to="/project5">
+        <Link to="/project5" target="_blank">
           <div className="single-project">
             <img className="project-picture" src={image5} alt="Type of project" />
             <span className="alt-text-project">Type of project <br />View details</span>
