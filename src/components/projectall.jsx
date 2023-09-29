@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import image1 from './project1/vitalBLood.png';
 import image2 from './project2/stepUp.png';
@@ -7,6 +7,47 @@ import image4 from './project4/portfolio.png';
 import image5 from './project5/machghalna.png';
 
 const Projectall = () => {
+  useEffect(() => {
+    const projectPictures = document.querySelectorAll('.project-picture');
+
+    function checkScroll() {
+      projectPictures.forEach((projectPicture) => {
+        const distanceToTop = projectPicture.getBoundingClientRect().top; 
+        const windowHeight = window.innerHeight;
+
+        if (distanceToTop < windowHeight - 100) { 
+          projectPicture.classList.add('appear');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll); 
+
+    function throttle(func, wait) { 
+      let timeout; 
+      return function () { 
+        const context = this; 
+        const args = arguments; 
+        if (!timeout) { 
+          timeout = setTimeout(() => { 
+            timeout = null; 
+            func.apply(context, args);
+          }, wait);
+        }
+      };
+    }
+
+    window.addEventListener('scroll', throttle(checkScroll, 100));
+
+    // Clean up the event listeners when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('load', checkScroll);
+      window.removeEventListener('scroll', throttle(checkScroll, 100));
+    };
+  }, []); // Empty dependency array ensures this effect runs once when the component mounts
+
   return (
     <div className="projects" id="projects">
       <h1>PROJECTS</h1>

@@ -15,11 +15,6 @@ import laravel from './skill-icons/laravel.png';
 import css from './skill-icons/css.png';
 import next from './skill-icons/next.png';
 
-
-
-
-
-
 const Skills = () => {
     return (
         <div className="skills" id="skills">
@@ -90,4 +85,4 @@ const Skills = () => {
     );
 }
 
-export default Skills
+export default Skills; 

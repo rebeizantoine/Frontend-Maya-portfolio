@@ -13,7 +13,6 @@ import Project2 from './components/project2/index2';
 import Project3 from './components/project3/index3';
 import Project4 from './components/project4/index4';
 import Project5 from './components/project5/index5';
-import ProjectLayout from './components/ProjectLayout';
 
 function App() {
   return (

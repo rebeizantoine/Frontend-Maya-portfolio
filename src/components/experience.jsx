@@ -3,11 +3,8 @@ import '../App.css';
 
 const Experience = () => {
     return (
-
         <div className="experience" id="experience">
-
             <h1>EXPERIENCE</h1>
-
             <div className="experiences-container">
                 <div className="experience-details">
                     <p className="experience-date">Nov 2022-June 2023</p>
@@ -26,4 +23,4 @@ const Experience = () => {
     );
 }
 
-export default Experience
+export default Experience; 
