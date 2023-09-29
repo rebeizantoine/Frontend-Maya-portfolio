@@ -4,7 +4,6 @@ import '../App.css';
 const About = () => {
     return (
         <div className="about" id="about">
-
             <h1>ABOUT ME</h1>
             <div className="about-text-container">
                 <p className="about-text">I'm a <span className="span-about">Full Stack Web Developer</span> based in Lebanon. I
