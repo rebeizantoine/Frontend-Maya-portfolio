@@ -1,12 +1,15 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+  }
+
+
 .topside {
     margin-left: 170px;
     display: flex;
     flex-direction: column;
 }
-
-
-
-
 
 .topside h1 {
     color: #846F63;
@@ -19,7 +22,6 @@
     /* 140% */
     letter-spacing: -2px;
 }
-
 
 .topside h3 {
     color: #846F63;

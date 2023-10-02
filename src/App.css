@@ -273,13 +273,19 @@ h1 {
 
 .experiences-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   margin-bottom: 45px;
+  padding: 0 150px;
 }
 
 .experience-details {
   width: 250px;
+  margin: 10px;
+  max-width: calc(50% - 20px);
+  box-sizing: border-box;
 }
 
 .experience-date {
@@ -295,6 +301,17 @@ h1 {
   padding-top: 15px;
   text-align: center;
 }
+
+/* To add when Database modified
+
+.experience-place {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.experience-description {
+  text-align: center;
+} */
 
 /* Skills section */
 
@@ -651,7 +668,6 @@ h1 {
   /* Experience */
 
   .experiences-container {
-    flex-direction: column;
     margin-bottom: 20px;
   }
 
