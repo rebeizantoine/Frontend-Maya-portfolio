@@ -1,3 +1,6 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
 * {
   font-family: 'Roboto', sans-serif;
   margin: 0px;
@@ -237,6 +240,7 @@ h1 {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -373,9 +377,9 @@ h1 {
   position: relative;
   z-index: 1;
   transition: opacity 0.3s ease-in-out;
-  opacity: 0; 
+  opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.5s ease, transform 0.5s ease; 
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .project-picture.appear {
@@ -505,23 +509,23 @@ h1 {
 
 @keyframes jiggle {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   25% {
-      transform: rotate(10deg);
+    transform: rotate(10deg);
   }
 
   50% {
-      transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
 
   75% {
-      transform: rotate(5deg);
+    transform: rotate(5deg);
   }
 
   100% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -580,107 +584,107 @@ h1 {
 @media screen and (max-width: 768px) {
 
   h1 {
-      margin: 0px;
-      font-size: 40px;
-      text-align: center;
+    margin: 0px;
+    font-size: 40px;
+    text-align: center;
   }
 
   /* Header */
 
   .header {
-      justify-content: space-between;
+    justify-content: space-between;
   }
 
   .logo-maya {
-      margin-left: 5%;
+    margin-left: 5%;
   }
 
   .navbar {
-      display: none;
+    display: none;
   }
 
   .burger-menu {
-      display: flex;
-      margin-right: 5%;
+    display: flex;
+    margin-right: 5%;
   }
 
   .menu-list {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 0;
-      background-color: #FFF;
-      padding: 10px;
-      box-shadow: 0px 0px 10px #846F63;
-      z-index: 2;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #FFF;
+    padding: 10px;
+    box-shadow: 0px 0px 10px #846F63;
+    z-index: 2;
   }
 
   .menu-list.active {
-      display: flex;
+    display: flex;
   }
 
   .menu-list li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   /* Hero */
 
   .hero-illustration {
-      max-width: 45%;
+    max-width: 45%;
 
   }
 
   /* About */
 
   .about-text-container {
-      justify-content: center;
-      margin: 0px;
-      margin-bottom: 45px;
-      align-items: center;
+    justify-content: center;
+    margin: 0px;
+    margin-bottom: 45px;
+    align-items: center;
   }
 
   .about-text {
-      width: 50%;
+    width: 50%;
   }
 
   /* Experience */
 
   .experiences-container {
-      flex-direction: column;
-      margin-bottom: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
   }
 
   .experience-description {
-      padding: 5px 0px 15px 0px;
+    padding: 5px 0px 15px 0px;
   }
 
   /* Projects */
 
   .project-picture {
-      max-height: 170px;
+    max-height: 170px;
   }
 
   /* Contact */
 
   .contact-portrait {
-      display: none;
+    display: none;
   }
 
   .contact-form {
-      border-radius: 35px;
+    border-radius: 35px;
   }
 
   .contact-icons-container {
-      padding-left: 5px;
+    padding-left: 5px;
   }
 
   /* Footer */
 
   .footer-nav ul {
-      row-gap: 5px;
-      flex-direction: column;
-      align-items: center;
+    row-gap: 5px;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -688,6 +692,6 @@ h1 {
   /* Skills */
 
   .skills-container {
-      grid-template-columns: repeat(2, 180px);
+    grid-template-columns: repeat(2, 180px);
   }
 }

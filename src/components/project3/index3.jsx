@@ -1,7 +1,29 @@
 import React from 'react'
+import SimpleImageSlider from "react-simple-image-slider";
 import './index3.css'
+import image31 from './lms.png'
+import image32 from './courses.png'
+import image33 from './attendance.png'
+import image34 from './report.png'
+import image35 from './Capture3.png'
+
+
 
 const index3 = () => {
+    const sliderImages = [
+        {
+            url: image31,
+        },
+        {
+            url: image32,
+        },
+        {
+            url: image33,
+        },
+        {
+            url: image34,
+        },
+    ];
     return (
         <div> <div class="LMSproject ">
             <div class="gradient-background">
@@ -9,26 +31,28 @@ const index3 = () => {
                     <h1>LEARNING MANAGEMENT SYSTEM</h1>
                     <h3>LMS website built with LAMP Stack</h3>
                 </div>
-                <div class="image-slider">
-                    <a href="lms.png" target="_blank">
-                        <img class="slider" src="lms.png" alt="Image 1" />
-                    </a>
-                    <a href="courses.png" target="_blank">
-                        <img class="slider" src="courses.png" alt="Image 2" />
-                    </a>
-                    <a href="attendance.png" target="_blank">
-                        <img class="slider" src="attendance.png" alt="Image 3" />
-                    </a>
-                    <a href="report.png" target="_blank">
-                        <img class="slider" src="report.png" alt="Image 4" />
-                    </a>
+                <div>
+                    <SimpleImageSlider
+                        className="custom-slider"
+                        width={900}
+                        height={475}
+                        images={sliderImages}
+                        showNavs={true}
+                        style={{
+
+                            marginLeft: '660px',
 
 
+                        }}
+                        autoPlay={true}
+                        autoPlayDuration={4000}
+
+                    />
                 </div>
 
 
 
-                <div class="image2"><img src="Capture333.PNG" alt="" /></div>
+
 
                 <div class="links-single">
                     <a href="https://ecom.khankanko.com/" target="_blank">Deployed Link</a>

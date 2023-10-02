@@ -1,6 +1,28 @@
 import React from 'react'
 import './index4.css'
+import SimpleImageSlider from "react-simple-image-slider";
+
+import image41 from './portfolio.png'
+import image42 from './skills.png'
+import image43 from './experience.png'
+import image44 from './aboutme.png'
+import image45 from './Capture4.png'
+
 const index4 = () => {
+    const sliderImages = [
+        {
+            url: image41,
+        },
+        {
+            url: image42,
+        },
+        {
+            url: image43,
+        },
+        {
+            url: image44,
+        },
+    ];
     return (
         <div><div class="portfolioclientproject ">
             <div class="gradient-background">
@@ -8,26 +30,28 @@ const index4 = () => {
                     <h1>PORTFOLIO FOR A CLIENT </h1>
                     <h3>Portfoilio website built with MERN Stack</h3>
                 </div>
-                <div class="image-slider">
-                    <a href="portfolio.png" target="_blank">
-                        <img class="slider" src="portfolio.png" alt="Image 1" />
-                    </a>
-                    <a href="skills.png" target="_blank">
-                        <img class="slider" src="skills.png" alt="Image 2" />
-                    </a>
-                    <a href="experience.png" target="_blank">
-                        <img class="slider" src="experience.png" alt="Image 3" />
-                    </a>
-                    <a href="aboutme.png" target="_blank">
-                        <img class="slider" src="aboutme.png" alt="Image 4" />
-                    </a>
+                <div>
+                    <SimpleImageSlider
+                        className="custom-slider"
+                        width={900}
+                        height={475}
+                        images={sliderImages}
+                        showNavs={true}
+                        style={{
+
+                            marginLeft: '660px',
 
 
+                        }}
+                        autoPlay={true}
+                        autoPlayDuration={4000}
+
+                    />
                 </div>
 
 
 
-                <div class="image2"><img src="Capture 123.PNG" alt="" /></div>
+                <div class="image2"><img src={image45} alt="" /></div>
 
                 <div class="links-single">
                     <a href="https://team6-frontend-fake-client.netlify.app/" target="_blank">Deployed Link</a>
