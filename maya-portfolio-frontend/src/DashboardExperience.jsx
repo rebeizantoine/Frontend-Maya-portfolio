@@ -9,7 +9,7 @@ function DashboardExperience() {
     try {
       const response = await fetch('http://localhost:5000/api/experiences');
       const dataR = await response.json();
-     // console.log(dataR);
+      // console.log(dataR);
       if (dataR.data.length > 0) {
         setData(dataR.data);
       } else {
@@ -20,6 +20,7 @@ function DashboardExperience() {
     }
   };
   const [date, setDate] = useState(Data.length > 0 ? Data[0].date : '');
+  const [company, setCompany] = useState(Data.length > 0 ? Data[0].company : '');
   const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].ex_txt : '');
 
   const handelDelete = async (e) => {
@@ -46,6 +47,7 @@ function DashboardExperience() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           date: date,
+          company: company,
           ex_txt: experienceText,
         }),
       });
@@ -79,6 +81,9 @@ function DashboardExperience() {
   const changeDate = (e) => {
     setDate(e.target.value);
   };
+  const changeCompany = (e) => {
+    setCompany(e.target.value);
+  };
   const changeText = (e) => {
     setExperienceText(e.target.value);
   };
@@ -99,6 +104,10 @@ function DashboardExperience() {
               <div className='label-and-input'>
                 <label>Date</label>
                 <input type="text" defaultValue={experience.date} onChange={changeDate} contentEditable />
+              </div>
+              <div className='label-and-input'>
+                <label>Company</label>
+                <input type="text" defaultValue={experience.company} onChange={changeCompany} contentEditable />
               </div>
               <div className='label-and-input'>
                 <label>Description</label>
@@ -129,6 +138,10 @@ function DashboardExperience() {
               <div className='label-and-input'>
                 <label>Date</label>
                 <input type="text" onChange={changeDate} />
+              </div>
+              <div className='label-and-input'>
+                <label>Company</label>
+                <input type="text" onChange={changeCompany} />
               </div>
               <div className='label-and-input'>
                 <label>Description</label>
