@@ -9,7 +9,7 @@ function DashboardExperience() {
     try {
       const response = await fetch('http://localhost:5000/api/experiences');
       const dataR = await response.json();
-      console.log(dataR);
+     // console.log(dataR);
       if (dataR.data.length > 0) {
         setData(dataR.data);
       } else {
@@ -32,7 +32,7 @@ const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].e
       if (!d.ok) throw new Error('An error occurred');
       let res = await d.json();
       setFetchData(!fetchData);
-      console.log(res);
+      //console.log(res);
     } catch (error) {
       console.log(error);
     }
