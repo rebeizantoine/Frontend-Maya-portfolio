@@ -67,6 +67,7 @@ function DashboardExperience() {
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify({
           date: date,
+          company: company,
           ex_txt: experienceText
         })
       });
