@@ -297,21 +297,14 @@ h1 {
   text-align: center;
 }
 
-.experience-description {
+.experience-company {
   padding-top: 15px;
-  text-align: center;
 }
 
-/* To add when Database modified
-
-.experience-place {
-  padding-top: 15px;
-  text-align: center;
-}
-
+.experience-company,
 .experience-description {
   text-align: center;
-} */
+}
 
 /* Skills section */
 
@@ -435,6 +428,7 @@ h1 {
 }
 
 /* Contact section */
+
 .contact-container {
   display: flex;
   justify-content: center;
@@ -475,11 +469,12 @@ h1 {
   outline: none;
 }
 
-.input-message {
+.input-group textarea {
   border: none;
   border-bottom: 2px solid #846F63;
   outline: none;
   padding-top: 35px;
+  background-color: #F5EBE0;
 }
 
 .contact-submit {
@@ -496,6 +491,11 @@ h1 {
 .contact-submit:hover {
   background-color: transparent;
   color: #846F63;
+}
+
+.contact-success {
+  text-align: center;
+  padding: 7px 0px;
 }
 
 .contact-portrait {

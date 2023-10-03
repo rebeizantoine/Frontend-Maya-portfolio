@@ -26,6 +26,7 @@ function Experience() {
                 {experienceData.map((experience, index) => (
                     <div className="experience-details" key={experience._id}>
                         <p className="experience-date">{experience.date}</p>
+                        <p className="experience-company">{experience.company}</p>
                         <p className="experience-description">{experience.ex_txt}</p>
                     </div>
                 ))}

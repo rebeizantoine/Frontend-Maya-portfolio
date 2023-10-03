@@ -68,7 +68,7 @@ const Contact = () => {
                         />
                     </div>
                     {state.succeeded ? (
-                        <p>Thank you for contacting me!</p>
+                        <p className='contact-success'>Thank you for contacting me!</p>
                     ) : (
                         <button className="contact-submit" type="submit">
                             SUBMIT
