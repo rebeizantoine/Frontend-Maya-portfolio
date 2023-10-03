@@ -19,8 +19,8 @@ function DashboardExperience() {
       console.error(err);
     }
   };
-const [date, setDate] = useState(Data.length > 0 ? Data[0].date : '');
-const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].ex_txt : '');
+  const [date, setDate] = useState(Data.length > 0 ? Data[0].date : '');
+  const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].ex_txt : '');
 
   const handelDelete = async (e) => {
     try {
@@ -57,24 +57,24 @@ const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].e
       console.log(error);
     }
   };
-  const handleSave=async(e)=>{
-    let id=e.target.name;
-    try{
-      const d=await fetch(`http://localhost:5000/api/experiences/update/${id}`,{
-          method: 'PUT',
-          headers: {'Content-Type': 'application/json', },
-          body:JSON.stringify({
-              date:date,
-              ex_txt:experienceText
-          })
+  const handleSave = async (e) => {
+    let id = e.target.name;
+    try {
+      const d = await fetch(`http://localhost:5000/api/experiences/update/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify({
+          date: date,
+          ex_txt: experienceText
+        })
       });
-      if(!d.ok)throw new Error("An error occured");
-      let res=await d.json();
+      if (!d.ok) throw new Error("An error occured");
+      let res = await d.json();
       setFetchData(!fetchData)
-     console.log(res);
-  }catch(error){
+      console.log(res);
+    } catch (error) {
       console.log(error);
-  }
+    }
   }
   const changeDate = (e) => {
     setDate(e.target.value);
@@ -82,7 +82,7 @@ const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].e
   const changeText = (e) => {
     setExperienceText(e.target.value);
   };
-  const showAddNew=()=>{
+  const showAddNew = () => {
     setShowAddNewExperience(true);
   }
   useEffect(() => {
@@ -95,34 +95,50 @@ const [experienceText, setExperienceText] = useState(Data.length > 0 ? Data[0].e
         {Data.map((experience, index) => (
           <div className="single-experience" key={experience._id}>
             <p>EXPERIENCE {index + 1}:</p>
-            <label>Date</label>
-            <input type="text" defaultValue={experience.date} onChange={changeDate} contentEditable />
-            <label>Description</label>
-            <input
-              type="text"
-              defaultValue={experience.ex_txt}
-              onChange={changeText}
-              contentEditable
-            />  
-            <button name={experience._id} onClick={handelDelete}>
-              Delete
-            </button>
-            <button name={experience._id} onClick={handleSave}>Save</button>
+            <div className='label-and-input-container'>
+              <div className='label-and-input'>
+                <label>Date</label>
+                <input type="text" defaultValue={experience.date} onChange={changeDate} contentEditable />
+              </div>
+              <div className='label-and-input'>
+                <label>Description</label>
+                <input
+                  type="text"
+                  defaultValue={experience.ex_txt}
+                  onChange={changeText}
+                  contentEditable
+                />
+              </div>
+            </div>
+            <div className='button-container'>
+              <button name={experience._id} onClick={handelDelete}>
+                Delete
+              </button>
+              <button name={experience._id} onClick={handleSave}>Save</button>
+            </div>
           </div>
         ))}
-        {Data.length === 0 && <p>Experience section is empty!</p>}
+        {Data.length === 0 && <p>Experience section is still empty</p>}
         <br />
         <br />
         {!showAddNewExperience && <button onClick={showAddNew}>Add</button>}
         {showAddNewExperience && (
           <div className="single-experience">
-            <p>NEW EXPERIENCE :</p>
-            <label>Date</label>
-            <input type="text" onChange={changeDate} />
-            <label>Description</label>
-            <input type="text" onChange={changeText} />
-            <button onClick={() => setShowAddNewExperience(false)}>Cancel</button>
-            <button onClick={handelAdd}>Add</button>
+            <p>NEW EXPERIENCE:</p>
+            <div className='label-and-input-container'>
+              <div className='label-and-input'>
+                <label>Date</label>
+                <input type="text" onChange={changeDate} />
+              </div>
+              <div className='label-and-input'>
+                <label>Description</label>
+                <input type="text" onChange={changeText} />
+              </div>
+            </div>
+            <div className='button-container'>
+              <button onClick={() => setShowAddNewExperience(false)}>Cancel</button>
+              <button onClick={handelAdd}>Add</button>
+            </div>
           </div>
         )}
       </div>
