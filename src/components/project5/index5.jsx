@@ -1,27 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import './index5.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import SimpleImageSlider from "react-simple-image-slider";
-import './index5.css'
 import image51 from './machghalna.png'
 import image52 from './machghalnaabout.png'
 import image53 from './categories.png'
 import image54 from './contactmachghalna.png'
 
 
-const index5 = () => {
+const Index5 = () => {
     const sliderImages = [
-        {
-            url: image51,
-        },
-        {
-            url: image52,
-        },
-        {
-            url: image53,
-        },
-        {
-            url: image54,
-        },
+        image51,
+        image52,
+        image53,
+        image54,
     ];
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    const cursorStyle = isHovered ? 'pointer' : 'auto';
+
+    useEffect(() => {
+        if (!isHovered) {
+            // Automatically advance to the next slide
+            const interval = setInterval(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
+            }, 3000); // Change image every 3 seconds
+
+            return () => {
+                // Clear the interval when the component unmounts or when the mouse enters the slider
+                clearInterval(interval);
+            };
+        }
+    }, [isHovered]);
+
     return (
         <div><div class="machghalnaproject ">
             <div class="gradient-background">
@@ -29,24 +51,20 @@ const index5 = () => {
                     <h1>MACHGHALNA</h1>
                     <h3>Atlier website built with Wordpress</h3>
                 </div>
-                <div>
-                    <SimpleImageSlider
-                        className="custom-slider"
-                        width={900}
-                        height={475}
-                        images={sliderImages}
-                        showNavs={true}
-                        style={{
-
-                            marginLeft: '660px',
-
-
-                        }}
-                        autoPlay={true}
-                        autoPlayDuration={4000}
-
-                    />
+                <div className="custom-slider">
+                    <div className="slider-container">
+                        <img
+                            src={sliderImages[currentImageIndex]}
+                            alt="Slider Image"
+                            style={{
+                                cursor: cursorStyle,
+                            }}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        />
+                    </div>
                 </div>
+
 
 
 
@@ -73,4 +91,4 @@ const index5 = () => {
     )
 }
 
-export default index5
+export default Index5
