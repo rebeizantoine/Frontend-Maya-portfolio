@@ -73,28 +73,6 @@ function DashboardSkills() {
     setShowNewSkillInput(!showNewSkillInput);
     setDoFetch(!doFetch);
  }
- const addSkill = async () => {
-  try {
-    const formData = new FormData();
-    formData.append('image', selectedFile);
-
-    const imageResponse = await axios.post('https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c', formData);
-    const imageUrl = imageResponse.data.data.url;
-
-
-    const skillData = {
-      name: skillName,
-      image: imageUrl,
-    };
-    const skillResponse = await axios.post('http://localhost:5000/api/skills/add', skillData,{ headers: { 'Content-Type': 'application/json' },})
-    if (!skillResponse) 
-      throw new Error('An error occurred while adding the skill');
-    console.log(skillResponse);
-    setShowNewSkillInput(false);
-    setDoFetch(!fetchData);
-  } catch (error) {
-    console.error(error);
-  }
   const addSkill = async () => {
     try {
       const formData = new FormData();
@@ -157,6 +135,6 @@ function DashboardSkills() {
       </div>
     </fieldset>
   );
- }
+ 
 }
 export default DashboardSkills;
