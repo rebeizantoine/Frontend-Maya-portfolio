@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import react from './skill-icons/react.png';
 import node from './skill-icons/node.png';
@@ -16,70 +16,37 @@ import css from './skill-icons/css.png';
 import next from './skill-icons/next.png';
 
 const Skills = () => {
+
+
+    const [skillsData, setSkillsData] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:5000/api/skills');
+                const data = await response.json();
+                if (data.data.length > 0) {
+                    setSkillsData(data.data);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        fetchData();
+    }, []);
+
+
     return (
         <div className="skills" id="skills">
             <h1>SKILLS</h1>
             <div className="skills-container">
-                <div className="skill">
-                    <img className="skill-icon" src={react} alt="React" />
-                    <span className="alt-text-skill">React</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={node} alt="Node" />
-                    <span className="alt-text-skill">Node</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={css} alt="CSS" />
-                    <span className="alt-text-skill">CSS</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={html} alt="HTML" />
-                    <span className="alt-text-skill">HTML</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={javascript2} alt="JavaScript" />
-                    <span className="alt-text-skill">JavaScript</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={react} alt="React Native" />
-                    <span className="alt-text-skill">React Native</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={laravel} alt="Laravel" />
-                    <span className="alt-text-skill">Laravel</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={figma} alt="Figma" />
-                    <span className="alt-text-skill">Figma</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={github} alt="GitHub" />
-                    <span className="alt-text-skill">GitHub</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={git} alt="Git" />
-                    <span className="alt-text-skill">Git</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={next} alt="Next" />
-                    <span className="alt-text-skill">Next</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={mongodb} alt="MongoDB" />
-                    <span className="alt-text-skill">MongoDB</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={mysql} alt="MySQL" />
-                    <span className="alt-text-skill">MySQL</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={php} alt="PHP" />
-                    <span className="alt-text-skill">PHP</span>
-                </div>
-                <div className="skill">
-                    <img className="skill-icon" src={postman} alt="Postman" />
-                    <span className="alt-text-skill">Postman</span>
-                </div>
+                {skillsData.map((skill, index) => (
+                    <div className="skill" key={skill._id}>
+                        <img className="skill-icon" src={skill.image} alt={skill.name} />
+                        <span className="alt-text-skill">{skill.name}</span>
+                    </div>
+                ))}
             </div>
         </div>
     );
