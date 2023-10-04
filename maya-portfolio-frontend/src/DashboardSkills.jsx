@@ -79,6 +79,7 @@ function DashboardSkills() {
 
     const imageResponse = await axios.post('https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c', formData);
     const imageUrl = imageResponse.data.data.url;
+    console.log(imageResponse);
 
     const skillData = {
       name: skillName,
