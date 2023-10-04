@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Index1 from './project1/index1';
+import Index2 from './project2/index2';
+import Index3 from './project3/index3';
+import Index4 from './project4/index4';
+import Index5 from './project5/index5';
 
 const Projectall = () => {
   const [projectsData, setProjectsData] = useState([]);
-  
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -16,7 +21,7 @@ const Projectall = () => {
         console.error(error);
       }
     }
-  
+
     fetchData();
   }, []);
 
@@ -75,6 +80,11 @@ const Projectall = () => {
           </Link>
         ))}
       </div>
+      {/* {projectsData.length > 0 && <Index1 projectsData={projectsData} />}
+      {projectsData.length > 0 && <Index2 projectsData={projectsData} />}
+      {projectsData.length > 0 && <Index3 projectsData={projectsData} />}
+      {projectsData.length > 0 && <Index4 projectsData={projectsData} />}
+      {projectsData.length > 0 && <Index5 projectsData={projectsData} />} */}
     </div>
   );
 };

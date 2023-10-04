@@ -1,38 +1,18 @@
 import React, { useState, useEffect } from 'react';
-
 import './index1.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import image11 from './vitalBLood.png';
-import image12 from './feed.png';
-import image13 from './signup.png';
-import image14 from './volunteers.png';
-import image15 from './Capture.png';
 import SimpleImageSlider from "react-simple-image-slider";
 
-const Index1 = () => {
-    const sliderImages = [
-        image11,
-        image12,
-        image13,
-        image14,
-    ];
+const Index1 = ({ projectsData }) => {
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
-    const cursorStyle = isHovered ? 'pointer' : 'auto';
+    const sliderImages = [];
 
     useEffect(() => {
-        if (!isHovered) {
+        if (!isHovered && sliderImages.length > 0) {
             // Automatically advance to the next slide
             const interval = setInterval(() => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
@@ -43,51 +23,62 @@ const Index1 = () => {
                 clearInterval(interval);
             };
         }
-    }, [isHovered]);
+    }, [isHovered, sliderImages]);
 
+    if (!projectsData || projectsData.length === 0) {
+        return <div>No project data available</div>;
+    }
+
+    const project = projectsData[0];
+
+    console.log("projectsData:", projectsData);
+
+    sliderImages.push(
+        project.mainPicture,
+        project.pic2,
+        project.pic3,
+        project.pic4
+    );
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    const cursorStyle = isHovered ? 'pointer' : 'auto';
+    console.log("projectsData in Index1:", projectsData);
     return (
         <div>
             <div className="bloodproject">
                 <div className="gradient-background">
                     <div className="topside">
-                        <h1>VITAL BLOOD</h1>
-                        <h3>Blood Donation website built with MERN Stack</h3>
+                        <h1>{project.title}</h1>
+                        <h3>{project.subtitle}</h3>
                     </div>
                     <div className="custom-slider">
                         <div className="slider-container">
                             <img
                                 src={sliderImages[currentImageIndex]}
                                 alt="Slider Image"
-                                style={{ cursor: cursorStyle, }}
+                                style={{ cursor: cursorStyle }}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             />
                         </div>
                     </div>
                     <div className="image2">
-                        <img src={image15} alt="" />
+                        <img src={project.mobile_pic} alt="" />
                     </div>
                     <div className="links-single">
-                        <a href="https://vitalblood.netlify.app" target="_blank">DEPLOYED LINK</a>
-                        <a href="https://drive.google.com/file/d/19u-6SfINc-7pVzHPuLbMj3E4v5iYoBot/view?usp=drive_link"
-                            target="_blank"
-                        >VIDEO DEMO</a>
+                        <a href={project.deployed} target="_blank">DEPLOYED LINK</a>
+                        <a href={project.video_link} target="_blank">VIDEO DEMO</a>
                     </div>
                     <div className="textblood">
                         <p>
-                            Vital Blood is a blood donation website built with MERN Stack.
-                            Users can request blood donations by submitting a form. Once
-                            submitted, the system automatically sends out emails and
-                            notifications to potential donors. To facilitate the donation
-                            process, I have implemented a "Feed" page where donors can browse
-                            and find requests. They can then express their willingness to
-                            donate and patiently wait for acceptance or rejection from the
-                            requester. This seamless communication is made possible through
-                            the user profile feature, which requires users to log in and manage
-                            their donation journey. As well, the website includes
-                            authentication and authorization where the user should sign in or
-                            sign up to make a request, donation, accept, or reject from the
-                            user's profile.
+                            {project.description}
                         </p>
                     </div>
                 </div>

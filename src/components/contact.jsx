@@ -7,7 +7,7 @@ import mail from './icons/mail.png';
 import { useForm } from '@formspree/react';
 
 const Contact = () => {
-    const [state, handleSubmit] = useForm('xjvqpeve');
+    const [state, handleSubmit] = useForm('xwkdwwor');
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
