@@ -10,8 +10,6 @@ import image33 from './attendance.png'
 import image34 from './report.png'
 import image35 from './Capture3.png'
 
-
-
 const Index3 = () => {
     const sliderImages = [
         image31,
@@ -59,23 +57,16 @@ const Index3 = () => {
                             <img
                                 src={sliderImages[currentImageIndex]}
                                 alt="Slider Image"
-                                style={{
-                                    cursor: cursorStyle,
-                                }}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
+                                style={{ cursor: cursorStyle, }}
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
                             />
                         </div>
                     </div>
 
-
-
-
-
                     <div class="links-single">
-                        <a href="https://ecom.khankanko.com/" target="_blank">Deployed Link</a>
-                        <a href="https://drive.google.com/file/d/1ZsNs2fpIsYqQhqL3S2g-bK30hHnpEGVB/view" target="_blank">Video
-                            Demo</a>
+                        <a href="https://ecom.khankanko.com/" target="_blank">DEPLOYED LINK</a>
+                        <a href="https://drive.google.com/file/d/1ZsNs2fpIsYqQhqL3S2g-bK30hHnpEGVB/view" target="_blank">VIDEO DEMO</a>
                     </div>
                     <div class="textlms">
                         <p>Introducing a comprehensive Learning Management System app developed using ReactJS and React Native
@@ -88,9 +79,7 @@ const Index3 = () => {
                             includes generating daily reports to monitor attendance trends effectively.
                         </p>
                     </div>
-
-
-
+                    
                 </div>
             </div></div>
         </div>

@@ -56,24 +56,18 @@ const Index2 = () => {
                         <img
                             src={sliderImages[currentImageIndex]}
                             alt="Slider Image"
-                            style={{
-                                cursor: cursorStyle,
-                            }}
+                            style={{ cursor: cursorStyle, }}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         />
                     </div>
                 </div>
 
-
-
-
                 <div className="image2"><img src={image25} alt="" /></div>
 
                 <div className="links-single">
-                    <a href="https://ecom.khankanko.com/" target="_blank">Deployed Link</a>
-                    <a href="https://drive.google.com/file/d/1ZsNs2fpIsYqQhqL3S2g-bK30hHnpEGVB/view" target="_blank">Video
-                        Demo</a>
+                    <a href="https://ecom.khankanko.com/" target="_blank">DEPLOYED LINK</a>
+                    <a href="https://drive.google.com/file/d/1ZsNs2fpIsYqQhqL3S2g-bK30hHnpEGVB/view" target="_blank">VIDEO DEMO</a>
                 </div>
                 <div className="textcommerce">
                     <p>StepUp is a dynamic e-commerce website developed using the MERN stack. It offers a diverse selection

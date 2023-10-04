@@ -58,9 +58,7 @@ const Index1 = () => {
                             <img
                                 src={sliderImages[currentImageIndex]}
                                 alt="Slider Image"
-                                style={{
-                                    cursor: cursorStyle,
-                                }}
+                                style={{ cursor: cursorStyle, }}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             />
@@ -70,15 +68,10 @@ const Index1 = () => {
                         <img src={image15} alt="" />
                     </div>
                     <div className="links-single">
-                        <a href="https://vitalblood.netlify.app" target="_blank">
-                            Deployed Link
-                        </a>
-                        <a
-                            href="https://drive.google.com/file/d/19u-6SfINc-7pVzHPuLbMj3E4v5iYoBot/view?usp=drive_link"
+                        <a href="https://vitalblood.netlify.app" target="_blank">DEPLOYED LINK</a>
+                        <a href="https://drive.google.com/file/d/19u-6SfINc-7pVzHPuLbMj3E4v5iYoBot/view?usp=drive_link"
                             target="_blank"
-                        >
-                            Video Demo
-                        </a>
+                        >VIDEO DEMO</a>
                     </div>
                     <div className="textblood">
                         <p>

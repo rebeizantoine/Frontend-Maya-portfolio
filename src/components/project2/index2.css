@@ -5,16 +5,12 @@
     margin-left: 170px;
     display: flex;
     flex-direction: column;
-
 }
-
-
 
 .dots {
     text-align: center;
     margin-top: 10px;
 }
-
 
 .dot {
     height: 15px;
@@ -56,9 +52,6 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-
-
-
 .topside h1 {
     color: #846F63;
     font-feature-settings: 'clig' off, 'liga' off;
@@ -67,11 +60,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 70px;
-    /* 140% */
     letter-spacing: -2px;
     margin-left: 0px;
 }
-
 
 .topside h3 {
     color: #846F63;
@@ -81,15 +72,10 @@
     font-style: italic;
     font-weight: 600;
     line-height: 70px;
-    /* 280% */
     letter-spacing: -1px;
     margin-top: -30px;
 
 }
-
-/* Add this to your CSS file (vitalcommerce.css) */
-
-
 
 .image2 img {
     width: 170px;
@@ -117,7 +103,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: 140%;
-    /* 28px */
     letter-spacing: -0.4px;
     margin-left: 28%;
     margin-top: 16%;
@@ -144,24 +129,17 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-
-
-
-
 }
 
 .slider-arrows {
     padding-right: 30%;
 }
 
-
 .custom-slider img {
     width: 900px;
     height: auto;
     padding-left: 35%;
-
 }
-
 
 .links-single {
     width: 300px;
@@ -181,7 +159,6 @@
 
 @media screen and (max-width: 844px) {
 
-    /* Styles specific to phones (max width 768px) */
     .topside {
         margin-left: 10px;
     }
@@ -189,15 +166,12 @@
     .links-single {
         margin-left: 0;
         margin-top: 30px;
-
     }
 
     .links-single a {
         width: 150px;
         height: 35px;
-
     }
-
 
     .topside h1 {
         font-size: 50px;
@@ -214,14 +188,11 @@
         padding-left: 0;
         width: 100%;
         height: 250px;
-
     }
 
     .slider-arrows {
         display: none;
     }
-
-
 
     .image2 img {
         display: none;
@@ -241,12 +212,8 @@
     }
 
     .links-single a {
-
-
         margin-left: 0;
         justify-content: center;
-        /* Center text within the container */
-
     }
 
     .links-single {
@@ -257,9 +224,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Center horizontally */
         justify-content: center;
-        /* Center vertically */
     }
 }
 
@@ -267,7 +232,6 @@
     .slider img {
         width: auto;
         height: auto;
-
     }
 
     .links-single {
