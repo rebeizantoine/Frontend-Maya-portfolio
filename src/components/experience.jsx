@@ -35,4 +35,8 @@ function Experience() {
     );
 }
 
+<<<<<<< HEAD
 export default Experience;
+=======
+export default Experience;
+>>>>>>> dabbf839db3e37b32d23669e38bb36fafc1c3841

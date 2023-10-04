@@ -1,14 +1,63 @@
-* {
-    font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  .topside {
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+.topside {
     margin-left: 170px;
     display: flex;
     flex-direction: column;
+
 }
+
+
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #555;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #846f63;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
 
 .topside h1 {
     color: #846F63;
@@ -20,6 +69,7 @@
     line-height: 70px;
     /* 140% */
     letter-spacing: -2px;
+    margin-left: 0px;
 }
 
 
@@ -37,63 +87,19 @@
 
 }
 
-/* Add this to your CSS file (vitalblood.css) */
-
-.image-slider {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    /* Set the maximum width as needed */
-    margin: 0 auto;
-    /* Center the slider */
-    margin-left: 35%;
-}
-
-.slider {
-    width: 100%;
-    opacity: 100%;
-    transition: opacity 0.5s ease;
-    /* Add smooth transition effect */
-    cursor: pointer;
-    /* Change cursor to a pointer when hovering over images */
-}
-
-.slider:hover {
-    opacity: 1;
-    /* Show the slide on hover */
-}
-
-.slider:first-child {
-    opacity: 1;
-    /* Show the first slide initially */
-}
-
-.slider:hover {
-    opacity: 1;
-    /* Show the slide on hover */
-}
+/* Add this to your CSS file (vitalcommerce.css) */
 
 
-.slider img {
-    width: 930px;
-    height: 400px;
-    margin-left: 10%;
-    margin-left: 32%;
-    border-radius: 35px;
-
-}
 
 .image2 img {
-    width: 160px;
-    height: 320px;
-    margin-top: -15%;
-    margin-left: 30%;
-
-
+    width: 170px;
+    height: 390px;
+    margin-top: -21.5%;
+    margin-left: 28%;
+    border-radius: 25px;
+    padding-top: 20px;
+    margin-bottom: -40px;
 }
-
-
 
 .gradient-background {
     background: linear-gradient(to bottom, #F5EBE0, white);
@@ -113,8 +119,9 @@
     line-height: 140%;
     /* 28px */
     letter-spacing: -0.4px;
-    margin-left: 25%;
-    margin-top: 15%;
+    margin-left: 28%;
+    margin-top: 16%;
+    padding-bottom: 2.5%;
 }
 
 .links-single a {
@@ -143,14 +150,27 @@
 
 }
 
+.slider-arrows {
+    padding-right: 30%;
+}
+
+
+.custom-slider img {
+    width: 900px;
+    height: auto;
+    padding-left: 35%;
+
+}
+
+
 .links-single {
     width: 300px;
     margin-top: -20%;
     margin-left: 150px;
 }
 
-.ecommerceproject {
-    margin-top: 100px;
+.commerceproject {
+    margin-top: -50px;
 }
 
 .topside {
@@ -159,43 +179,56 @@
     flex-direction: column;
 }
 
+@media screen and (max-width: 844px) {
 
-@media screen and (max-width: 1200px) {
-
+    /* Styles specific to phones (max width 768px) */
     .topside {
         margin-left: 10px;
     }
 
-}
+    .links-single {
+        margin-left: 0;
+        margin-top: 30px;
 
-@media screen and (max-width: 768px) {
-
-    .topside {
-        margin-left: 10px;
     }
+
+    .links-single a {
+        width: 150px;
+        height: 35px;
+
+    }
+
 
     .topside h1 {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     .topside h3 {
-        font-size: 16px;
+        font-size: 18px;
         margin-top: -20px;
-    }
-
-
-    .image-slider {
         margin-left: 0;
+        text-align: center;
     }
 
-    .slider img {
+    .custom-slider img {
+        padding-left: 0;
         width: 100%;
-        height: auto;
-        border-radius: 0;
+        height: 250px;
+
     }
+
+    .slider-arrows {
+        display: none;
+    }
+
+
 
     .image2 img {
         display: none;
+        border-radius: 35px;
+        position: absolute;
+        z-index: 2;
+        margin-top: 20px;
     }
 
     .textcommerce {
@@ -204,16 +237,44 @@
         line-height: 120%;
         margin-left: 0;
         margin-top: 0;
+        margin-bottom: 20%;
+    }
+
+    .links-single a {
+
+
+        margin-left: 0;
+        justify-content: center;
+        /* Center text within the container */
+
     }
 
     .links-single {
         width: 100%;
         margin-top: 0;
         margin-left: 0;
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center horizontally */
+        justify-content: center;
+        /* Center vertically */
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 844px) {
+    .slider img {
+        width: auto;
+        height: auto;
+
     }
 
-    .links-single a {
-        margin-left: 100px;
-        /* Add a 100px margin to the left */
+    .links-single {
+        margin-left: 200px,
+    }
+
+    .textcommerce {
+        margin-bottom: -10%ss;
     }
 }

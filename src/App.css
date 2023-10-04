@@ -174,7 +174,8 @@ h1 {
 .hero-content {
   flex: 1;
   max-width: 35%;
-  margin-left: 10%;
+  padding-left: 15%;
+
 }
 
 .hero-text {
