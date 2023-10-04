@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';
+=======
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+  }
+>>>>>>> dabbf839db3e37b32d23669e38bb36fafc1c3841
 
 .topside {
     margin-left: 170px;
@@ -8,6 +16,7 @@
 
 }
 
+<<<<<<< HEAD
 
 
 .dots {
@@ -59,6 +68,8 @@
 
 
 
+=======
+>>>>>>> dabbf839db3e37b32d23669e38bb36fafc1c3841
 .topside h1 {
     color: #846F63;
     font-feature-settings: 'clig' off, 'liga' off;
