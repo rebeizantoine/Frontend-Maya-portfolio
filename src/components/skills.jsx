@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-import react from './skill-icons/react.png';
-import node from './skill-icons/node.png';
-import figma from './skill-icons/figma.png';
-import github from './skill-icons/github.png';
-import git from './skill-icons/git.png';
-import mysql from './skill-icons/mysql.png';
-import php from './skill-icons/php.png';
-import postman from './skill-icons/postman.png';
-import html from './skill-icons/html.png';
-import mongodb from './skill-icons/mongodb.png';
-import javascript2 from './skill-icons/javascript2.png';
-import laravel from './skill-icons/laravel.png';
-import css from './skill-icons/css.png';
-import next from './skill-icons/next.png';
 
 const Skills = () => {
-
 
     const [skillsData, setSkillsData] = useState([]);
 
