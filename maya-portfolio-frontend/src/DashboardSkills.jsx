@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import replaceIcon from './replace-icon.png';
 import axios from 'axios';
+
 function DashboardSkills() {
   const [doFetch, setDoFetch] = useState(true);
   const [ourData, setOurData] = useState([]);
@@ -14,8 +15,8 @@ function DashboardSkills() {
       const dataR = await response.json();
       setOurData(dataR.data);
       if (ourData.length > 0) {
-       // setImg(ourData[0].image);
-       // setSkillName(ourData[0].name);
+        // setImg(ourData[0].image);
+        // setSkillName(ourData[0].name);
       }
     } catch (err) {
       console.error(err);
@@ -39,7 +40,7 @@ function DashboardSkills() {
       if (!d.ok) throw new Error('An error occurred');
       let res = await d.json();
       setDoFetch(!doFetch);
-     // console.log(res);
+      // console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +48,7 @@ function DashboardSkills() {
   const changeImg = (e) => {
     setSelectedFile(e.target.files[0]);
   };
-  const submitSkill  = async (e) => {
+  const submitSkill = async (e) => {
     e.preventDefault();
     console.log(selectedFile);
     if (selectedFile) {
@@ -56,7 +57,7 @@ function DashboardSkills() {
       try {
         const response = await axios.post('https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c', formData);
         const imageUrl = response.data.data.url;
-      //  setImg(imageUrl);
+        //  setImg(imageUrl);
         console.log('Image uploaded successfully:', imageUrl);
       } catch (error) {
         console.error('Error uploading image:', error);
@@ -66,9 +67,9 @@ function DashboardSkills() {
     }
   };
   const handleAddSkill = () => {
-    setShowNewSkillInput(true); 
+    setShowNewSkillInput(true);
   };
- const handleCancle=()=>{
+  const handleCancle = () => {
     setShowNewSkillInput(!showNewSkillInput);
     setDoFetch(!doFetch);
  }
@@ -79,7 +80,7 @@ function DashboardSkills() {
 
     const imageResponse = await axios.post('https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c', formData);
     const imageUrl = imageResponse.data.data.url;
-    console.log(imageResponse);
+
 
     const skillData = {
       name: skillName,
@@ -94,46 +95,68 @@ function DashboardSkills() {
   } catch (error) {
     console.error(error);
   }
-};
-  return (
-    <div className="skills" id="skills">
-      <h1>Skills</h1>
-      {ourData.length > 0 && (ourData.map((item,index)=>(
-        <div className="single-skill" key={item._id}>
-          <p>SKILL {index+1}:</p>
-          <div className="skill-name">
-            <p>Name:{item.name}</p>
-            <button name={item._id} onClick={handleDelete}>
-              Delete
-            </button>
-          </div>
-          <div className="skill-icon">
-            <label>Icon</label>
-            <img src={item.image} alt="skill-icon" className="replace-icon" width={50} height={50}/>
-          </div>
-        </div>
-      )))}
-      {showNewSkillInput ? (
-        <div className="single-skill">
-          <p>New Skill:</p>
-          <div className="skill-name">
-            <label>Name</label>
-            <input type="text"  onChange={changeSkillName} />
-          </div>
-          <div className="skill-icon">
-            <label>Icon</label>
-            <img src={replaceIcon} alt="skill-icon" className="replace-icon" width={50} height={50}/>
-            <input type="file" accept="image/*" className="upload-image" onChange={changeImg} />
-          </div>
-          <button onClick={handleCancle}>Cancel</button>
-          <button onClick={addSkill}>ADD</button>
-        </div>
-      ) : !showNewSkillInput&&(
-        <button onClick={handleAddSkill}>ADD SKILL</button>
-      )}
-    </div>
-  );
-  
+  const addSkill = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('image', selectedFile);
 
+      const imageResponse = await axios.post('https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c', formData);
+      const imageUrl = imageResponse.data.data.url;
+
+      const skillData = {
+        name: skillName,
+        image: imageUrl,
+      };
+      const skillResponse = await axios.post('http://localhost:5000/api/skills/add', skillData, { headers: { 'Content-Type': 'application/json' }, })
+      if (!skillResponse)
+        throw new Error('An error occurred while adding the skill');
+      console.log(skillResponse);
+      setShowNewSkillInput(false);
+      setDoFetch(!fetchData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  return (
+    <fieldset>
+      <div className="skills" id="skills">
+        <h1>Skills</h1>
+        {ourData.length > 0 && (ourData.map((item, index) => (
+          <div className="single-skill" key={item._id}>
+            <p>SKILL {index + 1}:</p>
+            <div className="skill-name">
+              <p>Name:{item.name}</p>
+              <button name={item._id} onClick={handleDelete}>
+                Delete
+              </button>
+            </div>
+            <div className="skill-icon">
+              <label>Icon</label>
+              <img src={item.image} alt="skill-icon" className="replace-icon" width={50} height={50} />
+            </div>
+          </div>
+        )))}
+        {showNewSkillInput ? (
+          <div className="single-skill">
+            <p>New Skill:</p>
+            <div className="skill-name">
+              <label>Name</label>
+              <input type="text" onChange={changeSkillName} />
+            </div>
+            <div className="skill-icon">
+              <label>Icon</label>
+              <img src={replaceIcon} alt="skill-icon" className="replace-icon" width={50} height={50} />
+              <input type="file" accept="image/*" className="upload-image" onChange={changeImg} />
+            </div>
+            <button onClick={handleCancle}>Cancel</button>
+            <button onClick={addSkill}>ADD</button>
+          </div>
+        ) : !showNewSkillInput && (
+          <button onClick={handleAddSkill}>ADD SKILL</button>
+        )}
+      </div>
+    </fieldset>
+  );
+ }
 }
 export default DashboardSkills;
