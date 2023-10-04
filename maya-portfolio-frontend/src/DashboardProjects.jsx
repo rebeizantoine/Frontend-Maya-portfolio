@@ -67,11 +67,11 @@ const fetchData=async()=>{
           headers: { 'Content-Type': 'application/json' }, 
         }
       );
-      
+      console.log(addResponse);
       if (!addResponse) {
         throw new Error('An error occurred while adding the skill');
       }
-      console.log(addResponse);
+      
     } catch (error) {
       console.error(error);
     }
