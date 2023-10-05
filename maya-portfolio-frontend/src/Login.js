@@ -28,7 +28,7 @@ function Login() {
     );
     if(!result) throw new Error("Failed while logging in ");
     if(result){
-        navigate('/dashboard');
+        navigate('/');
     }
     }catch(error){
       console.log(error)

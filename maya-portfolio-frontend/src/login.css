@@ -4,15 +4,13 @@
     padding: 0px;
     color: #846F63;
 }
-
-html,
+/*html,
 body {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
+}*/ 
 .login-bg {
     background-color: #F5EBE0;
     border: 2px solid #F5EBE0;
@@ -38,12 +36,12 @@ body {
     margin-bottom: 10px;
 }
 
-label {
+/*label {
     flex: 1;
     text-align: left;
     margin: 0px 10px;
-}
-
+}*/
+/*
 input {
     width: 100%;
     display: inline-block;
@@ -52,8 +50,8 @@ input {
     border: none;
     border-bottom: 2px solid #846F63;
     outline: none;
-}
-
+}*/
+/*
 button {
     background-color: #846F63;
     color: #F5EBE0;
@@ -63,4 +61,4 @@ button {
     cursor: pointer;
     width: 160px;
     margin: 25px auto 0px auto;
-}
+}*/
