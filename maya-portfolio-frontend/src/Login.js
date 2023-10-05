@@ -46,7 +46,7 @@ function Login() {
         <label className='labelPassword'>Password</label>
         <input className='password' type="password" id="password" onChange={changePass} required />
       </div>
-      <button onClick={handleSubmit} className="submit-login">SUBMIT</button>
+      <button onClick={handleSubmit} className="button-b">SUBMIT</button>
     </div>
     </div>
   );
