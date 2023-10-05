@@ -1,166 +1,264 @@
-import React from 'react';
-import replacePicture from './replace-picture.png'
-import { useEffect,useState,useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
 function DashboardProjects() {
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const videoLinkRef=useRef(null);
-  const deployedLinkRef=useRef(null);
-  const mainPicRef=useRef(null);
-  const pic2Ref=useRef(null);
-  const pic3Ref=useRef(null);
-  const pic4Ref=useRef(null);
-  const mobilePicRef=useRef(null);
-  /*const [ourData,setOurData]=useState([]);
-const [doFetch,setDoFetch]=useEffect(false);
-const fetchData=async()=>{
-  try {
-    const response = await fetch('http://localhost:5000/api/projects');
-    const dataR = await response.json();
-    setOurData(dataR.data);
-  } catch (err) {
-    console.error(err);
-  }
-};
-  useEffect(()=>{
-    fetchData();
-  },[doFetch]);*/
-  async function uploadImageToImgbb(imageFile) {
-    const formData = new FormData();
-    formData.append("image", imageFile);
-  
-    const response = await fetch("https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c", {
-      method: "POST",
-      body: formData,
-    });
-  
-    const data = await response.json();
-    return data.data.url;
-  }
-  const addProject = async (e) => {
-    e.preventDefault();
-    try {
-      const mainPictureUrl = await uploadImageToImgbb(mainPicRef.current.files[0]);
-      const pic2Url = await uploadImageToImgbb(pic2Ref.current.files[0]);
-      const pic3Url = await uploadImageToImgbb(pic3Ref.current.files[0]);
-      const pic4Url = await uploadImageToImgbb(pic4Ref.current.files[0]);
-      const mobilePicUrl=await uploadImageToImgbb(mobilePicRef.current.files[0]);
-      const project = {
-        title: titleRef.current.value,
-        subtitle: subtitleRef.current.value,
-        description: descriptionRef.current.value,
-        video_link: videoLinkRef.current.value,
-        deployed_link: deployedLinkRef.current.value,
-        mainPicture: mainPictureUrl,
-        pic2: pic2Url,
-        pic3: pic3Url,
-        pic4: pic4Url,
-        mobile_pic:mobilePicUrl
-      };
-      const addResponse = await axios.post(
-        'http://localhost:5000/api/projects/add',
-        JSON.stringify(project), 
-        {
-          headers: { 'Content-Type': 'application/json' }, 
-        }
-      );
-      console.log(addResponse);
-      if (!addResponse) {
-        throw new Error('An error occurred while adding the skill');
+  const [projects, setProjects] = useState([]);
+  const [doFetch, setDoFetch] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/projects');
+        setProjects(response.data.data);
+      } catch (err) {
+        console.error(err);
       }
-      
+    };
+    if (doFetch) {
+      fetchData();
+      setDoFetch(false);
+    }
+  }, [doFetch]);
+
+  const handleInputChange = (projectId, field, value) => {
+    const updatedProjects = [...projects];
+    const projectIndex = updatedProjects.findIndex((project) => project._id === projectId);
+    updatedProjects[projectIndex][field] = value;
+    setProjects(updatedProjects);
+  };
+
+  const handleFileChange = async (projectId, field, file) => {
+    try {
+      const imageUrl = await uploadImageToImgbb(file);
+      const updatedProjects = [...projects];
+      const projectIndex = updatedProjects.findIndex((project) => project._id === projectId);
+      updatedProjects[projectIndex][field] = imageUrl;
+      setProjects(updatedProjects);
     } catch (error) {
       console.error(error);
     }
   };
-  const handleSave=(ref)=>{
-    console.log(ref.current.value);
-  }
-  const handleDelete = (ref) => {
-    ref.current.value = ''; 
+
+  const handleClearFileInput = (projectId, field) => {
+    const updatedProjects = [...projects];
+    const projectIndex = updatedProjects.findIndex((project) => project._id === projectId);
+    updatedProjects[projectIndex][field] = null;
+    setProjects(updatedProjects);
   };
+
+  const saveChanges = async (projectId) => {
+    try {
+      const project = projects.find((p) => p._id === projectId);
+      const response = await axios.put(
+        `http://localhost:5000/api/projects/update/${projectId}`,
+        JSON.stringify(project),
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+
+      if (!response) {
+        throw new Error('An error occurred while updating the project');
+      }
+      setDoFetch(!doFetch);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const uploadImageToImgbb = async (imageFile) => {
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    const response = await fetch("https://api.imgbb.com/1/upload?key=91d27c7f35f4cd3885f4ada2ac3d2c1c", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    return data.data.url;
+  };
+
+
   return (
     <fieldset>
-      <div className="projects" id="projects">
-        <h1>Projects</h1>
+      {projects.length > 0 ? (
+        <div className="projects" id="projects">
+          <h1>Projects</h1>
 
-        <div className="single-project">
-          <form onSubmit={addProject}>
-          <p>PROJECT 1:</p>
-          <div className="project-title">
-            <label>Title</label>
-            <input type="text"  ref={titleRef}/>
-            <button onClick={() => handleDelete(titleRef)}>Delete</button>
-            <button onClick={() => handleSave(titleRef)}>Save</button>
-          </div>
-          <div className="project-subtitle">
-            <label>Subtitle</label>
-            <input type="text" ref={subtitleRef}/>
-            <button onClick={() => handleDelete(subtitleRef)}>Delete</button>
-            <button onClick={() => handleSave(subtitleRef)}>Save</button>
-          </div>
-          <div className="project-description">
-            <label>Description</label>
-            <input type="text" ref={descriptionRef}/>
-            <button onClick={() =>handleDelete(descriptionRef)}>Delete</button>
-            <button onClick={() => handleSave(descriptionRef)}>Save</button>
-          </div>
-          <div className="project-video">
-            <label>Video demo link</label>
-            <input type="text" ref={videoLinkRef} />
-            <button onClick={() => handleDelete(videoLinkRef)}>Delete</button>
-            <button onClick={() => handleSave(videoLinkRef)}>Save</button >
-          </div>
-          <div className="project-deployed">
-            <label>Deployed link</label>
-            <input type="text" ref={deployedLinkRef}/>
-            <button onClick={() => handleDelete(deployedLinkRef)}>Delete</button>
-            <button onClick={() => handleSave(deployedLinkRef)}>Save</button>
-          </div>
-          <div className="project-picture">
-            <label>Main picture</label>
-            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
-            <input type="file" accept="image/*" className='upload-image' ref={mainPicRef} />
-            <button onClick={() => handleDelete(mainPicRef)}>Delete</button>
-            <button onClick={() => handleSave(mainPicRef)}>Save</button>
-          </div>
-          <div className="project-picture">
-            <label>Picture 2</label>
-            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
-            <input type="file" accept="image/*" className='upload-image' ref={pic2Ref} />
-            <button onClick={() => handleDelete(pic2Ref)}>Delete</button>
-             <button onClick={() => handleSave(pic2Ref)}>Save</button>
-          </div>  
-          <div className="project-picture">
-            <label>Picture 3</label>
-            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
-            <input type="file" accept="image/*" className='upload-image' ref={pic3Ref} />
-            <button>Delete</button>
-            <button onClick={() => handleSave(pic3Ref)}>Save</button>
-          </div>
-          <div className="project-picture">
-            <label>Picture 4</label>
-            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
-            <input type="file" accept="image/*" className='upload-image' ref={pic4Ref}/>
-            <button>Delete</button>
-            <button onClick={() => handleSave(pic4Ref)}>Save</button>
-          </div>
-          <div className="project-picture">
-            <label>Picture 4</label>
-            <img src={replacePicture} alt="skill-icon" className='replace-picture' />
-            <input type="file" accept="image/*" className='upload-image'  ref={mobilePicRef}/>
-            <button>Delete</button>
-            <button onClick={() => handleSave(mobilePicRef)}>Save</button>
-          </div>
-          <div><button type='submit'>add project</button></div>
-          </form>
+          {projects.map((project, index) => (
+            <div className="single-project" key={index}>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <p>PROJECT {index + 1}:</p>
+                <div className="project-title">
+                  <label>Title</label>
+                  <input
+                    type="text"
+                    defaultValue={project.title}
+                    onChange={(e) => handleInputChange(project._id, 'title', e.target.value)}
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'title')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-subtitle">
+                  <label>Subtitle</label>
+                  <input
+                    type="text"
+                    defaultValue={project.subtitle}
+                    onChange={(e) => handleInputChange(project._id, 'subtitle', e.target.value)}
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'subtitle')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-description">
+                  <label>Description</label>
+                  <input
+                    type="text"
+                    defaultValue={project.description}
+                    onChange={(e) => handleInputChange(project._id, 'description', e.target.value)}
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'description')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-video">
+                  <label>Video demo link</label>
+                  <input
+                    type="text"
+                    defaultValue={project.video_link}
+                    onChange={(e) => handleInputChange(project._id, 'video_link', e.target.value)}
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'video_link')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-deployed">
+                  <label>Deployed link</label>
+                  <input
+                    type="text"
+                    defaultValue={project.deployed_link}
+                    onChange={(e) => handleInputChange(project._id, 'deployed_link', e.target.value)}
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'deployed_link')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-picture">
+                  <label>Main picture</label>
+                  <img
+                    src={project.mainPicture || 'default-image-url'} // Provide a default image URL or placeholder
+                    alt="Main"
+                    width={50}
+                    height={50}
+                    className="replace-picture"
+                  />
+                  <input
+                    type="file"
+                    onChange={(e) => handleFileChange(project._id, 'mainPicture', e.target.files[0])}
+                    accept="image/*"
+                    className="upload-image"
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'mainPicture')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-picture">
+                  <label>Picture 2</label>
+                  <img
+                    src={project.pic2 || 'default-image-url'}
+                    alt="Picture 2"
+                    width={50}
+                    height={50}
+                    className="replace-picture"
+                  />
+                  <input
+                    type="file"
+                    onChange={(e) => handleFileChange(project._id, 'pic2', e.target.files[0])}
+                    accept="image/*"
+                    className="upload-image"
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'pic2')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-picture">
+                  <label>Picture 3</label>
+                  <img
+                    src={project.pic3 || 'default-image-url'}
+                    alt="Picture 3"
+                    width={50}
+                    height={50}
+                    className="replace-picture"
+                  />
+                  <input
+                    type="file"
+                    onChange={(e) => handleFileChange(project._id, 'pic3', e.target.files[0])}
+                    accept="image/*"
+                    className="upload-image"
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'pic3')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-picture">
+                  <label>Picture 4</label>
+                  <img
+                    src={project.pic4 || 'default-image-url'}
+                    alt="Picture 4"
+                    width={50}
+                    height={50}
+                    className="replace-picture"
+                  />
+                  <input
+                    type="file"
+                    onChange={(e) => handleFileChange(project._id, 'pic4', e.target.files[0])}
+                    accept="image/*"
+                    className="upload-image"
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'pic4')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+                <div className="project-picture">
+                  <label>Mobile Picture</label>
+                  <img
+                    src={project.mobile_pic || 'default-image-url'}
+                    alt="Mobile Picture"
+                    width={50}
+                    height={50}
+                    className="replace-picture"
+                  />
+                  <input
+                    type="file"
+                    onChange={(e) => handleFileChange(project._id, 'mobile_pic', e.target.files[0])}
+                    accept="image/*"
+                    className="upload-image"
+                  />
+                  <button onClick={() => handleClearFileInput(project._id, 'mobile_pic')}>
+                    Clear
+                  </button>
+                  <button onClick={() => saveChanges(project._id)}>Save</button>
+                </div>
+              </form>
+            </div>
+          ))}
+          <br />
+          <br />
         </div>
-        <br />
-        <br />
-      </div>
+      ) : (
+        <div>loading....</div>
+      )}
     </fieldset>
   );
 }

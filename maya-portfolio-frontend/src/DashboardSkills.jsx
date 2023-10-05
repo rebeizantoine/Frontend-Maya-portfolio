@@ -99,19 +99,20 @@ function DashboardSkills() {
     <fieldset>
       <div className="skills" id="skills">
         <h1>Skills</h1>
+        <div className='all-skills'>
         {ourData.length > 0 && (ourData.map((item, index) => (
           <div className="single-skill" key={item._id}>
             <p>SKILL {index + 1}:</p>
             <div className="skill-name">
               <p>Name:{item.name}</p>
-              <button name={item._id} onClick={handleDelete}>
-                Delete
-              </button>
             </div>
             <div className="skill-icon">
               <label>Icon</label>
               <img src={item.image} alt="skill-icon" className="replace-icon" width={50} height={50} />
             </div>
+            <button name={item._id} onClick={handleDelete}>
+                Delete
+              </button>
           </div>
         )))}
         {showNewSkillInput ? (
@@ -132,8 +133,10 @@ function DashboardSkills() {
         ) : !showNewSkillInput && (
           <button onClick={handleAddSkill}>ADD SKILL</button>
         )}
+                  </div>
       </div>
     </fieldset>
+
   );
  
 }
