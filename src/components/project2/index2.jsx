@@ -1,34 +1,19 @@
 
 import React, { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import './index2.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import image21 from './stepUp.png'
-import image22 from './cart.png'
-import image23 from './dashboard.png'
-import image24 from './login.png'
-import image25 from './Capture2.png'
 
 const Index2 = () => {
-    const sliderImages = [
-        image21,
-        image22,
-        image23,
-        image24,
-    ];
+
+    const location = useLocation();
+    const { data } = location.state;
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
-    const cursorStyle = isHovered ? 'pointer' : 'auto';
+    const sliderImages = [];
 
     useEffect(() => {
         if (!isHovered) {
@@ -42,14 +27,33 @@ const Index2 = () => {
                 clearInterval(interval);
             };
         }
-    }, [isHovered]);
+    }, [isHovered, sliderImages]);
 
+    if (!data || data.length === 0) {
+        return <div>No project data available</div>;
+    }
+
+    sliderImages.push(
+        data[1].mainPicture,
+        data[1].pic2,
+        data[1].pic3,
+        data[1].pic4);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    const cursorStyle = isHovered ? 'pointer' : 'auto';
     return (
         <div> <div className="ecommerceproject">
             <div className="gradient-background">
                 <div className="topside">
-                    <h1>STEPUP</h1>
-                    <h3>E-commerce website built with MERN Stack </h3>
+                    <h1>{data[1].title}</h1>
+                    <h3>{data[1].subtitle}</h3>
                 </div>
                 <div className="custom-slider">
                     <div className="slider-container">
@@ -63,25 +67,18 @@ const Index2 = () => {
                     </div>
                 </div>
 
-                <div className="image2"><img src={image25} alt="" /></div>
-
+                <div className="image2">
+                    <img src={data[1].mobile_pic} alt="Picture" />
+                </div>
                 <div className="links-single">
-                    <a href="https://ecom.khankanko.com/" target="_blank">DEPLOYED LINK</a>
-                    <a href="https://drive.google.com/file/d/1ZsNs2fpIsYqQhqL3S2g-bK30hHnpEGVB/view" target="_blank">VIDEO DEMO</a>
+                    <a href={data[1].deployed_link} target="_blank">DEPLOYED LINK</a>
+                    <a href={data[1].video_link} target="_blank">VIDEO DEMO</a>
                 </div>
                 <div className="textcommerce">
-                    <p>StepUp is a dynamic e-commerce website developed using the MERN stack. It offers a diverse selection
-                        of categories, each housing a wide range of products with various sizes, colors, and quantities.
-                        Customers can easily browse and search for their preferred shoes, adding them to their cart. To
-                        complete the order, a simple registration process is required. The admin, accessible through
-                        authorized login, manages the platform. This includes overseeing orders, updating product details,
-                        and enhancing site descriptions. StepUp ensures a user-friendly shopping experience and efficient
-                        order management, making it a seamless hub for online shopping.
+                    <p>
+                        {data[1].description}
                     </p>
                 </div>
-
-
-
             </div>
         </div></div>
     )

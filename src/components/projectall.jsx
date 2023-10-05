@@ -72,7 +72,7 @@ const Projectall = () => {
 
       <div className="projects-container">
         {projectsData.map((project, index) => (
-          <Link to={`/project${index + 1}`} target="_blank" key={project._id}>
+          <Link to={`/project${index + 1}`} state={{ data: projectsData }} key={project._id}>
             <div className="single-project">
               <img className="project-picture" src={project.mainPicture} alt={project.title} />
               <span className="alt-text-project">{project.title} <br />View details</span>
@@ -80,11 +80,6 @@ const Projectall = () => {
           </Link>
         ))}
       </div>
-      {/* {projectsData.length > 0 && <Index1 projectsData={projectsData} />}
-      {projectsData.length > 0 && <Index2 projectsData={projectsData} />}
-      {projectsData.length > 0 && <Index3 projectsData={projectsData} />}
-      {projectsData.length > 0 && <Index4 projectsData={projectsData} />}
-      {projectsData.length > 0 && <Index5 projectsData={projectsData} />} */}
     </div>
   );
 };

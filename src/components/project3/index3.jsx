@@ -1,25 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import './index3.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import SimpleImageSlider from "react-simple-image-slider";
-
-import image31 from './lms.png'
-import image32 from './courses.png'
-import image33 from './attendance.png'
-import image34 from './report.png'
-import image35 from './Capture3.png'
 
 const Index3 = () => {
-    const sliderImages = [
-        image31,
-        image32,
-        image33,
-        image34,
-    ];
+
+    const location = useLocation();
+    const { data } = location.state;
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+
+    const sliderImages = [];
+
+    useEffect(() => {
+        if (!isHovered && sliderImages.length > 0) {
+            // Automatically advance to the next slide
+            const interval = setInterval(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
+            }, 3000);
+
+            return () => {
+                // Clear the interval when the component unmounts or when the mouse enters the slider
+                clearInterval(interval);
+            };
+        }
+    }, [isHovered, sliderImages]);
+
+    if (!data || data.length === 0) {
+        return <div>No project data available</div>;
+    }
+
+    sliderImages.push(
+        data[2].mainPicture,
+        data[2].pic2,
+        data[2].pic3,
+        data[2].pic4
+    )
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -31,25 +49,12 @@ const Index3 = () => {
 
     const cursorStyle = isHovered ? 'pointer' : 'auto';
 
-    useEffect(() => {
-        if (!isHovered) {
-            // Automatically advance to the next slide
-            const interval = setInterval(() => {
-                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
-            }, 3000); // Change image every 3 seconds
-
-            return () => {
-                // Clear the interval when the component unmounts or when the mouse enters the slider
-                clearInterval(interval);
-            };
-        }
-    }, [isHovered]);
     return (
         <div> <div class="LMSproject ">
             <div class="gradient-background">
                 <div class="topside">
-                    <h1>LEARNING MANAGEMENT SYSTEM</h1>
-                    <h3>LMS website built with LAMP Stack</h3>
+                    <h1>{data[2].title}</h1>
+                    <h3>{data[2].subtitle}</h3>
                 </div>
                 <div>
                     <div className="custom-slider">
@@ -58,31 +63,27 @@ const Index3 = () => {
                                 src={sliderImages[currentImageIndex]}
                                 alt="Slider Image"
                                 style={{ cursor: cursorStyle, }}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
                             />
                         </div>
                     </div>
-
+                    <div className="image2">
+                        <img src={data[2].mobile_pic} alt="Picture" />
+                    </div>
                     <div class="links-single">
-                        <a href="https://ecom.khankanko.com/" target="_blank">DEPLOYED LINK</a>
-                        <a href="https://drive.google.com/file/d/1ZsNs2fpIsYqQhqL3S2g-bK30hHnpEGVB/view" target="_blank">VIDEO DEMO</a>
+                        <a href={data[2].deployed_link} target="_blank">DEPLOYED LINK</a>
+                        <a href={data[2].video_link} target="_blank">VIDEO DEMO</a>
                     </div>
                     <div class="textlms">
-                        <p>Introducing a comprehensive Learning Management System app developed using ReactJS and React Native
-                            for the frontend, paired with Laravel (PHP) for the backend. This system offers robust
-                            authentication and authorization features, along with a flexible dashboard catering to diverse user
-                            roles and their respective privileges. The user roles encompass 'admin' and 'super admin', each
-                            empowered with distinct rights. The system seamlessly integrates classes, courses, teachers, and
-                            students. This entails assigning teachers to specific courses and classes, enrolling students in
-                            designated grade sections, and simplifying attendance management for targeted sections. The latter
-                            includes generating daily reports to monitor attendance trends effectively.
+                        <p>
+                            {data[2].description}
                         </p>
                     </div>
-                    
                 </div>
-            </div></div>
+            </div>
         </div>
+    </div>
     )
 }
 
