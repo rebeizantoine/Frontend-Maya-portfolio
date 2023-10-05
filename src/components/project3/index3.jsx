@@ -50,7 +50,7 @@ const Index3 = () => {
     const cursorStyle = isHovered ? 'pointer' : 'auto';
 
     return (
-        <div> <div class="LMSproject ">
+        <div> <div class="project ">
             <div class="gradient-background">
                 <div class="topside">
                     <h1>{data[2].title}</h1>
@@ -68,14 +68,14 @@ const Index3 = () => {
                             />
                         </div>
                     </div>
-                    <div className="image2">
+                    <div className="image1">
                         <img src={data[2].mobile_pic} alt="Picture" />
                     </div>
                     <div class="links-single">
                         <a href={data[2].deployed_link} target="_blank">DEPLOYED LINK</a>
                         <a href={data[2].video_link} target="_blank">VIDEO DEMO</a>
                     </div>
-                    <div class="textlms">
+                    <div class="text">
                         <p>
                             {data[2].description}
                         </p>

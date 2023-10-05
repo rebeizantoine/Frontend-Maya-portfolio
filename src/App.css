@@ -17,11 +17,19 @@
   border-bottom: 1px solid #846F63;
 }
 
+.about,
+.experience,
+.skills,
+.projects,
+.contact {
+  padding: 50px 0px;
+}
+
 h1 {
   font-size: 45px;
   font-weight: 600;
   margin-left: 15%;
-  padding: 20px 0px;
+  padding: 40px 0px;
 }
 
 /* Header */
@@ -30,7 +38,12 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  background-color: #FFF;
 }
+
 
 .logo-maya {
   height: 50px;
@@ -165,26 +178,30 @@ h1 {
 
 .hero {
   display: flex;
-  row-gap: 25px;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 20px 0px;
+  padding: 50px;
+  padding-top: 150px;
 }
 
 .hero-content {
-  flex: 1;
-  max-width: 35%;
-  padding-left: 15%;
-
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  padding-left: 30%;
+  row-gap: 15px;
+  padding: 35px 0px;
 }
 
 .hero-text {
   padding: 35px 0px;
+  width: 120%;
+  font-size: 20px;
 }
 
 .hero-text span {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 33px;
 }
 
 .span-name {
@@ -207,7 +224,6 @@ h1 {
     opacity: 1;
   }
 }
-
 
 .download-cv {
   background-color: #846F63;
@@ -253,7 +269,6 @@ h1 {
 .about-text-container {
   display: flex;
   justify-content: flex-end;
-  margin-right: 160px;
   margin-bottom: 45px;
 }
 
@@ -262,7 +277,8 @@ h1 {
   border: 2px solid #F5EBE0;
   border-radius: 35px;
   padding: 25px;
-  width: 40%;
+  margin: auto;
+  width: 50%;
   text-align: justify;
 }
 
@@ -325,8 +341,8 @@ h1 {
 }
 
 .skill-icon {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-color: transparent;
   background-size: cover;
   border: 2px solid #846F63;
@@ -554,7 +570,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 15px;
+  row-gap: 30px;
 }
 
 .footer-nav {
@@ -607,14 +623,23 @@ h1 {
     text-align: center;
   }
 
+  .about,
+  .experience,
+  .skills,
+  .projects,
+  .contact {
+    padding: 20px 0px;
+  }
+
   /* Header */
 
   .header {
     justify-content: space-between;
+    position: relative
   }
 
   .logo-maya {
-    margin-left: 5%;
+    margin-left: 55%;
   }
 
   .navbar {
@@ -648,9 +673,13 @@ h1 {
 
   /* Hero */
 
-  .hero-illustration {
-    max-width: 45%;
+  .hero {
+    padding: 50px;
+    justify-content: flex-start;
+  }
 
+  .hero-illustration {
+    max-width: 78%;
   }
 
   /* About */
@@ -663,13 +692,15 @@ h1 {
   }
 
   .about-text {
-    width: 50%;
+    width: 80%;
   }
 
   /* Experience */
 
   .experiences-container {
     margin-bottom: 20px;
+    flex-direction: column;
+    padding: 0px;
   }
 
   .experience-description {

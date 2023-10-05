@@ -31,7 +31,7 @@ function Header() {
 
   return (
     <div className={`header ${isMenuOpen ? 'menu-open' : ''}`} id="home">
-      <img className="logo-maya" src={Logo} alt="Logo" />
+      <a href="/"><img className="logo-maya" src={Logo} alt="Logo" /></a>
 
       <nav className="navbar">
         <ul>

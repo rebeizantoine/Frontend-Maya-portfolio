@@ -82,7 +82,7 @@
     margin-top: -30px;
 }
 
-.image2 img {
+.image1 img {
     width: 170px;
     height: 390px;
     margin-top: -21.5%;
@@ -97,7 +97,7 @@
     margin-top: 60px;
 }
 
-.textlms {
+.text {
     width: 1000px;
     height: 200px;
     color: #7E5C3B;
@@ -111,7 +111,7 @@
     letter-spacing: -0.4px;
     margin-left: 28%;
     margin-top: 16%;
-    padding-bottom: 2.5%;
+    padding-bottom: 5.5%;
 }
 
 .links-single a {
@@ -144,6 +144,7 @@
     width: 900px;
     height: auto;
     padding-left: 35%;
+    padding-top: 15px;
 }
 
 .links-single {
@@ -152,12 +153,11 @@
     margin-left: 150px;
 }
 
-.LMSproject {
-    margin-top: -50px;
+.project {
+    padding-top: 25px;
 }
 
 .topside {
-    margin-left: 170px;
     display: flex;
     flex-direction: column;
 }
@@ -166,6 +166,7 @@
 
     .topside {
         margin-left: 10px;
+        text-align: center;
     }
 
     .links-single {
@@ -183,7 +184,7 @@
     }
 
     .topside h3 {
-        font-size: 18px;
+        font-size: 25;
         margin-top: -20px;
         margin-left: 0;
         text-align: center;
@@ -199,7 +200,7 @@
         display: none;
     }
 
-    .image2 img {
+    .image1 img {
         display: none;
         border-radius: 35px;
         position: absolute;
@@ -207,13 +208,22 @@
         margin-top: 20px;
     }
 
-    .textlms {
-        width: 100%;
+    .text {
+        width: 90% !important;
         font-size: 16px;
         line-height: 120%;
         margin-left: 0;
         margin-top: 0;
         margin-bottom: 20%;
+        justify-content: center;
+    }
+
+    .text p {
+        justify-content: center !important;
+        text-align: center;
+        width: 90% !important;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .links-single a {
@@ -231,19 +241,97 @@
         align-items: center;
         justify-content: center;
     }
+
+    .project {
+        width: 100%;
+        margin-bottom: 5% !important;
+        height: 70% !important;
+    }
+
+    .text {
+        margin-bottom: 3% !important;
+        height: auto !important;
+        width: auto !important;
+    }
+
+    .gradient-background {
+        height: 30%;
+    }
+
+    .project {
+        margin-bottom: 0 !important;
+        height: 100% !important;
+    }
 }
 
-@media screen and (max-width: 1100px) and (min-width: 844px) {
-    .slider img {
-        width: auto;
+@media screen and (min-width: 844px) and (max-width: 1300px) {
+    .custom-slider img {
+        width: 100% !important;
         height: auto;
+        margin-left: 0;
+        padding-left: 0 !important;
+    }
+
+    .custom-slider {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .image1 {
+        display: none;
+    }
+
+    .project {
+        width: 100%;
+        margin-bottom: 5% !important;
+    }
+
+    .text {
+        margin-left: 0 !important;
+        width: 90% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding-left: 5%;
+        margin-bottom: 1% !important;
+        margin-top: 2%;
+        height: auto !important;
+    }
+
+    .text p {
+        justify-content: center !important;
+        text-align: center;
+        width: 90% !important;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 0 !important;
+    }
+
+    .topside h1 {
+        justify-content: center;
+    }
+
+    .topside {
+        justify-content: center;
+        text-align: center;
+        margin-left: 0px !important;
+        padding-left: 0;
     }
 
     .links-single {
-        margin-left: 200px,
+        display: flex;
+        justify-content: center !important;
+        align-items: center !important;
+        width: auto !important;
+        height: auto !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-top: 4% !important;
+        text-align: center !important;
     }
+}
 
-    .textlms {
-        margin-bottom: -10%ss;
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
+    .image1 {
+        display: none !important;
     }
 }

@@ -40,7 +40,7 @@ function Hero() {
         const url = window.URL.createObjectURL(data);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'Maya-Atiah-Cv-FullStackWebDeveloper.pdf'; // Update with your CV file name
+        a.download = 'TEST'; // Update with your CV file name
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);

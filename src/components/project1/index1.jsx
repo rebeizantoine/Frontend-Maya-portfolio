@@ -51,7 +51,7 @@ const Index1 = () => {
     
     return (
         <div>
-            <div className="bloodproject">
+            <div className="project">
                 <div className="gradient-background">
                     <div className="topside">
                         <h1>{data[0].title}</h1>
@@ -68,14 +68,14 @@ const Index1 = () => {
                             />
                         </div>
                     </div>
-                    <div className="image2">
+                    <div className="image1">
                         <img src={data[0].mobile_pic} alt="Picture" />
                     </div>
                     <div className="links-single">
                         <a href={data[0].deployed_link} target="_blank">DEPLOYED LINK</a>
                         <a href={data[0].video_link} target="_blank">VIDEO DEMO</a>
                     </div>
-                    <div className="textblood">
+                    <div className="text">
                         <p>
                             {data[0].description}
                         </p>
