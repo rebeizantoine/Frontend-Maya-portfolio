@@ -27,9 +27,8 @@ button:hover {
 h1 {
     font-size: 30px;
     font-weight: 600;
-    margin-left: 130px;
     padding: 20px 0px;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 p {
@@ -53,6 +52,9 @@ textarea {
 .header {
     display: flex;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: #FFF;
 }
 
 .logo-maya {
@@ -69,18 +71,13 @@ textarea {
     margin-right: 100px;
 }
 
-.hr-header {
-    width: 100%;
-    border: 2px solid #846F63;
-}
-
 /* Sidebar */
 
 .sidebar {
     width: 130px;
     position: fixed;
     z-index: 1;
-    top: 120px;
+    top: 100px;
     background: #846F63;
     overflow-x: hidden;
     padding: 8px 0;
@@ -116,7 +113,7 @@ textarea {
 /* CV section */
 
 .cv-fieldset {
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .upload-cv {
@@ -139,7 +136,7 @@ textarea {
     align-items: flex-start;
 }
 
-.single-experience p{
+.single-experience p {
     margin-bottom: 10px;
 }
 
@@ -176,6 +173,15 @@ textarea {
 
 .replace-icon {
     margin: 0px 6px;
+}
+
+.all-skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 50px;
+    align-items: flex-end;
 }
 
 /* Projects section */

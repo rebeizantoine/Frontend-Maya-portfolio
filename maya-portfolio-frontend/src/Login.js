@@ -35,19 +35,21 @@ function Login() {
     }
   }
   return (
+    <div className='container'>
     <div className="login-bg">
       <img src={logo} className="logo-login" alt='logo' />
       <div className="input-login">
-        <label>Email</label>
-        <input type="email" id="email" onChange={changeUsername} required />
+        <label className='labelEmail'>Email</label>
+        <input className='email' type="email" id="email" onChange={changeUsername} required />
       </div>
       <div className="input-login">
-        <label>Password</label>
-        <input type="password" id="password" onChange={changePass} required />
+        <label className='labelPassword'>Password</label>
+        <input className='password' type="password" id="password" onChange={changePass} required />
       </div>
       <button onClick={handleSubmit} className="submit-login">SUBMIT</button>
     </div>
+    </div>
   );
-}
+}; 
 
 export default Login;

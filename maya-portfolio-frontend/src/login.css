@@ -4,13 +4,14 @@
     padding: 0px;
     color: #846F63;
 }
-/*html,
-body {
-    height: 100%;
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-}*/ 
+    height: 99vh;
+} 
+
 .login-bg {
     background-color: #F5EBE0;
     border: 2px solid #F5EBE0;
@@ -36,13 +37,15 @@ body {
     margin-bottom: 10px;
 }
 
-/*label {
+.labelEmail,
+.labelPassword {
     flex: 1;
     text-align: left;
     margin: 0px 10px;
-}*/
-/*
-input {
+}
+
+.email,
+.password {
     width: 100%;
     display: inline-block;
     background-color: #F5EBE0;
@@ -50,8 +53,8 @@ input {
     border: none;
     border-bottom: 2px solid #846F63;
     outline: none;
-}*/
-/*
+}
+
 button {
     background-color: #846F63;
     color: #F5EBE0;
@@ -61,4 +64,4 @@ button {
     cursor: pointer;
     width: 160px;
     margin: 25px auto 0px auto;
-}*/
+}
