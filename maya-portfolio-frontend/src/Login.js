@@ -17,7 +17,7 @@ function Login() {
   const handleSubmit=async()=>{
     try{
     const result=await axios.post(
-      `http://localhost:5000/api/admin`,
+      `${process.env.REACT_APP_API_URL}/api/admin`,
       JSON.stringify({
         username:username,
         password:pass
@@ -28,7 +28,7 @@ function Login() {
     );
     if(!result) throw new Error("Failed while logging in ");
     if(result){
-        navigate('/');
+        navigate('/dashboard');
     }
     }catch(error){
       console.log(error)

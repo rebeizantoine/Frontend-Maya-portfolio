@@ -8,7 +8,7 @@ function DashboardCV() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/cv');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/cv`);
         setCv(response.data.data);
       } catch (err) {
         console.error(err);
@@ -41,7 +41,7 @@ function DashboardCV() {
       const newCv = {
         cv: imgBbResponse.data.data.url,
       };
-      await axios.put(`http://localhost:5000/api/cv/update/${e.target.name}`, newCv, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/cv/update/${e.target.name}`, newCv, {
         headers: { 'Content-Type': 'application/json' },
       });
       setDoFetch(!doFetch);

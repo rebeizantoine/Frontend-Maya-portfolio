@@ -13,7 +13,7 @@ function DashboardAbout() {
   };
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/about');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/about}`); 
       const dataR = await response.json();
      // console.log(dataR)
       if (dataR.data.length > 0) {
@@ -26,7 +26,7 @@ function DashboardAbout() {
   };
   const handelSave=async()=>{
     try{
-      const d=await fetch(`http://localhost:5000/api/about/update/${id}`,{
+      const d=await fetch(`${process.env.REACT_APP_API_URL}/api/about/update/${id}`,{
           method: 'PUT',
           headers: {'Content-Type': 'application/json', },
           body:JSON.stringify({
@@ -44,7 +44,7 @@ function DashboardAbout() {
   }
   const handelAdd=async()=>{
     try{
-      const d=await fetch(`http://localhost:5000/api/about/add`,{
+      const d=await fetch(`${process.env.REACT_APP_API_URL}/api/about/add`,{
           method: 'POST',
           headers: {'Content-Type': 'application/json', },
           body:JSON.stringify({
@@ -63,7 +63,7 @@ function DashboardAbout() {
   }
   const handleDelete=async () => {
     try {
-      const d = await fetch(`http://localhost:5000/api/about/remove/${id}`, {
+      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/about/remove/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
       });

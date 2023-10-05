@@ -11,7 +11,7 @@ function DashboardSkills() {
   const [selectedFile, setSelectedFile] = useState(null);
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/skills');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/skills`);
       const dataR = await response.json();
       setOurData(dataR.data);
       if (ourData.length > 0) {
@@ -33,7 +33,7 @@ function DashboardSkills() {
   const handleDelete = async (e) => {
     try {
       let Id = e.target.name;
-      const d = await fetch(`http://localhost:5000/api/skills/remove/${Id}`, {
+      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/skills/remove/${Id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
