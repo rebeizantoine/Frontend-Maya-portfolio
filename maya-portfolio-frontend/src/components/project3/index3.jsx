@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import './index3.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Header from '../Header';
+import Footer from '../footer';
 
 const Index3 = () => {
 
@@ -50,7 +52,8 @@ const Index3 = () => {
     const cursorStyle = isHovered ? 'pointer' : 'auto';
 
     return (
-        <div> <div class="project ">
+        <div> 
+            <Header/><div class="project ">
             <div class="gradient-background">
                 <div class="topside">
                     <h1>{data[2].title}</h1>
@@ -83,6 +86,7 @@ const Index3 = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>
     )
 }

@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import './index1.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Header from '../Header';
+import Footer from '../footer';
 
 const Index1 = () => {
 
@@ -51,6 +53,7 @@ const Index1 = () => {
     
     return (
         <div>
+   <Header/>
             <div className="project">
                 <div className="gradient-background">
                     <div className="topside">
@@ -82,6 +85,7 @@ const Index1 = () => {
                     </div>
                 </div>
             </div>
+             <Footer/>
         </div>
     );
 };

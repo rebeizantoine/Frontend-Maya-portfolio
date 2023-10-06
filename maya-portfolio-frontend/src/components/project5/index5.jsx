@@ -3,7 +3,8 @@ import { useLocation } from "react-router-dom";
 import './index5.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import Header from '../Header';
+import Footer from '../footer';
 
 const Index5 = () => {
 
@@ -51,37 +52,40 @@ const Index5 = () => {
     const cursorStyle = isHovered ? 'pointer' : 'auto';
 
     return (
-        <div><div class="project ">
-            <div class="gradient-background">
-                <div class="topside">
-                    <h1>{data[4].title}</h1>
-                    <h3>{data[4].subtitle}</h3>
-                </div>
-                <div className="custom-slider">
-                    <div className="slider-container">
-                        <img
-                            src={sliderImages[currentImageIndex]}
-                            alt="Slider Image"
-                            style={{ cursor: cursorStyle, }}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        />
+        <div>
+            <Header />
+            <div class="project ">
+                <div class="gradient-background">
+                    <div class="topside">
+                        <h1>{data[4].title}</h1>
+                        <h3>{data[4].subtitle}</h3>
+                    </div>
+                    <div className="custom-slider">
+                        <div className="slider-container">
+                            <img
+                                src={sliderImages[currentImageIndex]}
+                                alt="Slider Image"
+                                style={{ cursor: cursorStyle, }}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            />
+                        </div>
+                    </div>
+                    <div className="image1">
+                        <img src={data[4].mobile_pic} alt="Picture" />
+                    </div>
+                    <div class="links-single">
+                        <a href={data[4].deployed_link} target="_blank">DEPLOYED LINK</a>
+                        <a href={data[4].video_link} target="_blank">VIDEO DEMO</a>
+                    </div>
+                    <div class="text">
+                        <p>
+                            {data[4].description}
+                        </p>
                     </div>
                 </div>
-                <div className="image1">
-                    <img src={data[4].mobile_pic} alt="Picture" />
-                </div>
-                <div class="links-single">
-                    <a href={data[4].deployed_link} target="_blank">DEPLOYED LINK</a>
-                    <a href={data[4].video_link} target="_blank">VIDEO DEMO</a>
-                </div>
-                <div class="text">
-                    <p>
-                        {data[4].description}
-                    </p>
-                </div>
             </div>
-        </div>
+            <Footer />
         </div>
     );
 };
