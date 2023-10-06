@@ -5,7 +5,7 @@
     color: #846F63;
 }
 
-button {
+.dash-main button, .log-out {
     background-color: #846F63;
     border: 2px solid #846F63;
     color: #F5EBE0;
@@ -18,13 +18,13 @@ button {
     margin: 10px;
 }
 
-button:hover {
+.dash-main button:hover, .log-out:hover {
     background-color: transparent;
     border: 2px solid #846F63;
     color: #846F63;
 }
 
-h1 {
+.dash-h1 {
     font-size: 30px;
     font-weight: 600;
     padding: 20px 0px;
@@ -42,14 +42,14 @@ fieldset {
     padding: 20px 45px;
 }
 
-input,
-textarea {
+.dash-main input,
+.dash-main textarea {
     margin: 5px;
 }
 
 /* Header */
 
-.header {
+.dash-header {
     display: flex;
     align-items: center;
     position: fixed;
@@ -57,13 +57,13 @@ textarea {
     background-color: #FFF;
 }
 
-.logo-maya {
+.dash-logo-maya {
     height: 50px;
     margin-left: 100px;
     padding: 15px 0px;
 }
 
-.header p {
+.dash-header p {
     margin: auto;
 }
 
@@ -73,7 +73,7 @@ textarea {
 
 /* Sidebar */
 
-.sidebar {
+.dash-sidebar {
     width: 130px;
     position: fixed;
     z-index: 1;
@@ -84,7 +84,7 @@ textarea {
     bottom: 0px;
 }
 
-.sidebar a {
+.dash-sidebar a {
     padding: 15px;
     text-decoration: none;
     border: 2px solid #846F63;
@@ -94,14 +94,14 @@ textarea {
     text-align: center;
 }
 
-.sidebar a:hover {
+.dash-sidebar a:hover {
     background-color: #F5EBE0;
     border: 2px solid #846F63;
     border-radius: 35px;
     color: #846F63;
 }
 
-.main {
+.dash-main {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -116,7 +116,7 @@ textarea {
     margin-top: 100px;
 }
 
-.upload-cv {
+.dash-upload-cv {
     display: flex;
     align-items: center;
 }
@@ -136,37 +136,37 @@ textarea {
     align-items: flex-start;
 }
 
-.single-experience p {
+.dash-single-experience p {
     margin-bottom: 10px;
 }
 
-.label-and-input-container {
+.dash-label-and-input-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 10px;
 }
 
-.label-and-input {
+.dash-label-and-input {
     display: flex;
     flex-direction: row;
     margin-bottom: 5px;
 }
 
-.label-and-input input {
+.dash-label-and-input input {
     width: 400px;
     margin-left: 10px;
 }
 
 
-.button-container {
+.dash-button-container {
     display: flex;
     width: 100%;
 }
 
 /* Skills section */
 
-.skill-icon {
+.dash-skill-icon {
     display: flex;
     align-items: flex-start;
 }
@@ -175,7 +175,7 @@ textarea {
     margin: 0px 6px;
 }
 
-.all-skills {
+.dash-all-skills {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -186,38 +186,38 @@ textarea {
 
 /* Projects section */
 
-.project-title,
-.project-subtitle,
-.project-description,
-.project-video,
-.project-deployed,
-.project-picture {
+.dash-project-title,
+.dash-project-subtitle,
+.dash-project-description,
+.dash-project-video,
+.dash-project-deployed,
+.dash-project-picture {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.project-title label,
-.project-subtitle label,
-.project-description label,
-.project-video label,
-.project-deployed label,
-.project-picture label {
+.dash-project-title label,
+.dash-project-subtitle label,
+.dash-project-description label,
+.dash-project-video label,
+.dash-project-deployed label,
+.dash-project-picture label {
     flex: 1;
 }
 
-.project-title input,
-.project-subtitle input,
-.project-description input,
-.project-video input,
-.project-deployed input,
-.project-picture input {
+.dash-project-title input,
+.dash-project-subtitle input,
+.dash-project-description input,
+.dash-project-video input,
+.dash-project-deployed input,
+.dash-project-picture input {
     flex: 3;
     margin-right: 10px;
     padding: 5px;
 }
 
-.project-picture {
+.dash-project-picture {
     display: flex;
     align-items: flex-start;
 }

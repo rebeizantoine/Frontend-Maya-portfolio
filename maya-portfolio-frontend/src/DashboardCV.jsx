@@ -8,7 +8,7 @@ function DashboardCV() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/cv`);
+        const response = await axios.get('http://localhost:5000/api/cv');
         setCv(response.data.data);
       } catch (err) {
         console.error(err);
@@ -41,7 +41,7 @@ function DashboardCV() {
       const newCv = {
         cv: imgBbResponse.data.data.url,
       };
-      await axios.put(`${process.env.REACT_APP_API_URL}/api/cv/update/${e.target.name}`, newCv, {
+      await axios.put(`http://localhost:5000/api/cv/update/${e.target.name}`, newCv, {
         headers: { 'Content-Type': 'application/json' },
       });
       setDoFetch(!doFetch);
@@ -55,8 +55,8 @@ function DashboardCV() {
   return (
     <fieldset className='cv-fieldset'>
       <div className="cv" id="cv">
-        <h1>CV</h1>
-        <div className="upload-cv">
+        <h1 className='dash-h1'>CV</h1>
+        <div className="dash-upload-cv">
         {cv.length>0?(<img src={cv[0].cv} alt="cv-image" width={50} height={50} className="replace-picture" />):(<div>loading...</div>)}
           <p>Upload your CV (pdf file)</p>
           <input type="file" accept=".pdf" onChange={(e) => setCVFile(e.target.files[0])} />

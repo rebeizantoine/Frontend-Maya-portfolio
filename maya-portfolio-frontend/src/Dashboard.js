@@ -13,7 +13,7 @@ function Dashboard() {
     <div>
       <DashboardHeader />
       <DashboardSidebar />
-      <div className="main">
+      <div className="dash-main">
         <DashboardCV />
         <DashboardAbout />
         <DashboardExperience />

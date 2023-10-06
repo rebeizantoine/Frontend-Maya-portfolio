@@ -11,7 +11,7 @@ function DashboardSkills() {
   const [selectedFile, setSelectedFile] = useState(null);
   const fetchData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/skills`);
+      const response = await fetch('http://localhost:5000/api/skills');
       const dataR = await response.json();
       setOurData(dataR.data);
       if (ourData.length > 0) {
@@ -33,7 +33,7 @@ function DashboardSkills() {
   const handleDelete = async (e) => {
     try {
       let Id = e.target.name;
-      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/skills/remove/${Id}`, {
+      const d = await fetch(`http://localhost:5000/api/skills/remove/${Id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -97,16 +97,16 @@ function DashboardSkills() {
   };
   return (
     <fieldset>
-      <div className="skills" id="skills">
-        <h1>Skills</h1>
-        <div className='all-skills'>
+      <div className="dash-skills" id="skills">
+        <h1 className='dash-h1'>Skills</h1>
+        <div className='dash-all-skills'>
         {ourData.length > 0 && (ourData.map((item, index) => (
-          <div className="single-skill" key={item._id}>
+          <div className="dash-single-skill" key={item._id}>
             <p>SKILL {index + 1}:</p>
-            <div className="skill-name">
+            <div className="dash-skill-name">
               <p>Name:{item.name}</p>
             </div>
-            <div className="skill-icon">
+            <div className="dash-skill-icon">
               <label>Icon</label>
               <img src={item.image} alt="skill-icon" className="replace-icon" width={50} height={50} />
             </div>
@@ -116,13 +116,13 @@ function DashboardSkills() {
           </div>
         )))}
         {showNewSkillInput ? (
-          <div className="single-skill">
+          <div className="dash-single-skill">
             <p>New Skill:</p>
-            <div className="skill-name">
+            <div className="dash-skill-name">
               <label>Name</label>
               <input type="text" onChange={changeSkillName} />
             </div>
-            <div className="skill-icon">
+            <div className="dash-skill-icon">
               <label>Icon</label>
               <img src={replaceIcon} alt="skill-icon" className="replace-icon" width={50} height={50} />
               <input type="file" accept="image/*" className="upload-image" onChange={changeImg} />
