@@ -2,7 +2,7 @@ import React from 'react';
 
 function DashboardSidebar() {
   return (
-    <div className="sidebar">
+    <div className="dash-sidebar">
       <a href="#cv">CV</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>

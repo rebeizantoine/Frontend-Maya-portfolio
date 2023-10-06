@@ -84,7 +84,7 @@ useEffect(()=>{
   return (
     <fieldset>
       <div className="about" id="about">
-        <h1>About</h1>
+        <h1 className='dash-h1'>About</h1>
         <div className="edit-about">
           <p>Edit your about text</p>
          <textarea

@@ -83,14 +83,14 @@ function DashboardProjects() {
   return (
     <fieldset>
       {projects.length > 0 ? (
-        <div className="projects" id="projects">
-          <h1>Projects</h1>
+        <div className="dash-projects" id="projects">
+          <h1 className='dash-h1'>Projects</h1>
 
           {projects.map((project, index) => (
-            <div className="single-project" key={index}>
+            <div className="dash-single-project" key={index}>
               <form onSubmit={(e) => e.preventDefault()}>
                 <p>PROJECT {index + 1}:</p>
-                <div className="project-title">
+                <div className="dash-project-title">
                   <label>Title</label>
                   <input
                     type="text"
@@ -102,7 +102,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-subtitle">
+                <div className="dash-project-subtitle">
                   <label>Subtitle</label>
                   <input
                     type="text"
@@ -114,7 +114,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-description">
+                <div className="dash-project-description">
                   <label>Description</label>
                   <input
                     type="text"
@@ -126,7 +126,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-video">
+                <div className="dash-project-video">
                   <label>Video demo link</label>
                   <input
                     type="text"
@@ -138,7 +138,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-deployed">
+                <div className="dash-project-deployed">
                   <label>Deployed link</label>
                   <input
                     type="text"
@@ -150,7 +150,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-picture">
+                <div className="dash-project-picture">
                   <label>Main picture</label>
                   <img
                     src={project.mainPicture || 'default-image-url'} // Provide a default image URL or placeholder
@@ -170,7 +170,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-picture">
+                <div className="dash-project-picture">
                   <label>Picture 2</label>
                   <img
                     src={project.pic2 || 'default-image-url'}
@@ -190,7 +190,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-picture">
+                <div className="dash-project-picture">
                   <label>Picture 3</label>
                   <img
                     src={project.pic3 || 'default-image-url'}
@@ -210,7 +210,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-picture">
+                <div className="dash-project-picture">
                   <label>Picture 4</label>
                   <img
                     src={project.pic4 || 'default-image-url'}
@@ -230,7 +230,7 @@ function DashboardProjects() {
                   </button>
                   <button onClick={() => saveChanges(project._id)}>Save</button>
                 </div>
-                <div className="project-picture">
+                <div className="dash-project-picture">
                   <label>Mobile Picture</label>
                   <img
                     src={project.mobile_pic || 'default-image-url'}

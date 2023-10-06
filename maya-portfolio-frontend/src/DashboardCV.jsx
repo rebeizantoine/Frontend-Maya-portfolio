@@ -55,8 +55,8 @@ function DashboardCV() {
   return (
     <fieldset className='cv-fieldset'>
       <div className="cv" id="cv">
-        <h1>CV</h1>
-        <div className="upload-cv">
+        <h1 className='dash-h1'>CV</h1>
+        <div className="dash-upload-cv">
         {cv.length>0?(<img src={cv[0].cv} alt="cv-image" width={50} height={50} className="replace-picture" />):(<div>loading...</div>)}
           <p>Upload your CV (pdf file)</p>
           <input type="file" accept=".pdf" onChange={(e) => setCVFile(e.target.files[0])} />

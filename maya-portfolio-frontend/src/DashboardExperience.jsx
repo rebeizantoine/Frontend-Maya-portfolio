@@ -97,20 +97,20 @@ function DashboardExperience() {
   return (
     <fieldset>
       <div className="experience" id="experience">
-        <h1>Experience</h1>
+        <h1 className='dash-h1'>Experience</h1>
         {Data.map((experience, index) => (
-          <div className="single-experience" key={experience._id}>
+          <div className="dash-single-experience" key={experience._id}>
             <p>EXPERIENCE {index + 1}:</p>
-            <div className='label-and-input-container'>
-              <div className='label-and-input'>
+            <div className='dash-label-and-input-container'>
+              <div className='dash-label-and-input'>
                 <label>Date</label>
                 <input type="text" defaultValue={experience.date} onChange={changeDate} contentEditable />
               </div>
-              <div className='label-and-input'>
+              <div className='dash-label-and-input'>
                 <label>Company</label>
                 <input type="text" defaultValue={experience.company} onChange={changeCompany} contentEditable />
               </div>
-              <div className='label-and-input'>
+              <div className='dash-label-and-input'>
                 <label>Description</label>
                 <input
                   type="text"
@@ -120,7 +120,7 @@ function DashboardExperience() {
                 />
               </div>
             </div>
-            <div className='button-container'>
+            <div className='dash-button-container'>
               <button name={experience._id} onClick={handelDelete}>
                 Delete
               </button>
@@ -133,23 +133,23 @@ function DashboardExperience() {
         <br />
         {!showAddNewExperience && <button onClick={showAddNew}>Add</button>}
         {showAddNewExperience && (
-          <div className="single-experience">
+          <div className="dash-single-experience">
             <p>NEW EXPERIENCE:</p>
-            <div className='label-and-input-container'>
-              <div className='label-and-input'>
+            <div className='dash-label-and-input-container'>
+              <div className='dash-label-and-input'>
                 <label>Date</label>
                 <input type="text" onChange={changeDate} />
               </div>
-              <div className='label-and-input'>
+              <div className='dash-label-and-input'>
                 <label>Company</label>
                 <input type="text" onChange={changeCompany} />
               </div>
-              <div className='label-and-input'>
+              <div className='dash-label-and-input'>
                 <label>Description</label>
                 <input type="text" onChange={changeText} />
               </div>
             </div>
-            <div className='button-container'>
+            <div className='dash-button-container'>
               <button onClick={() => setShowAddNewExperience(false)}>Cancel</button>
               <button onClick={handelAdd}>Add</button>
             </div>
