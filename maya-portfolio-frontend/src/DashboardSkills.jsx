@@ -11,7 +11,7 @@ function DashboardSkills() {
   const [selectedFile, setSelectedFile] = useState(null);
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/skills');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/skills`);
       const dataR = await response.json();
       setOurData(dataR.data);
       if (ourData.length > 0) {
@@ -33,7 +33,7 @@ function DashboardSkills() {
   const handleDelete = async (e) => {
     try {
       let Id = e.target.name;
-      const d = await fetch(`http://localhost:5000/api/skills/remove/${Id}`, {
+      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/skills/remove/${Id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -72,7 +72,7 @@ function DashboardSkills() {
   const handleCancle = () => {
     setShowNewSkillInput(!showNewSkillInput);
     setDoFetch(!doFetch);
- }
+  }
   const addSkill = async () => {
     try {
       const formData = new FormData();
@@ -85,7 +85,7 @@ function DashboardSkills() {
         name: skillName,
         image: imageUrl,
       };
-      const skillResponse = await axios.post('http://localhost:5000/api/skills/add', skillData, { headers: { 'Content-Type': 'application/json' }, })
+      const skillResponse = await axios.post(`${process.env.REACT_APP_API_URL}/api/skills/add`, skillData, { headers: { 'Content-Type': 'application/json' }, })
       if (!skillResponse)
         throw new Error('An error occurred while adding the skill');
       console.log(skillResponse);
@@ -100,44 +100,44 @@ function DashboardSkills() {
       <div className="dash-skills" id="skills">
         <h1 className='dash-h1'>Skills</h1>
         <div className='dash-all-skills'>
-        {ourData.length > 0 && (ourData.map((item, index) => (
-          <div className="dash-single-skill" key={item._id}>
-            <p>SKILL {index + 1}:</p>
-            <div className="dash-skill-name">
-              <p>Name:{item.name}</p>
-            </div>
-            <div className="dash-skill-icon">
-              <label>Icon</label>
-              <img src={item.image} alt="skill-icon" className="replace-icon" width={50} height={50} />
-            </div>
-            <button name={item._id} onClick={handleDelete}>
+          {ourData.length > 0 && (ourData.map((item, index) => (
+            <div className="dash-single-skill" key={item._id}>
+              <p>SKILL {index + 1}:</p>
+              <div className="dash-skill-name">
+                <p>Name:{item.name}</p>
+              </div>
+              <div className="dash-skill-icon">
+                <label>Icon</label>
+                <img src={item.image} alt="skill-icon" className="replace-icon" width={50} height={50} />
+              </div>
+              <button name={item._id} onClick={handleDelete}>
                 Delete
               </button>
-          </div>
-        )))}
-        {showNewSkillInput ? (
-          <div className="dash-single-skill">
-            <p>New Skill:</p>
-            <div className="dash-skill-name">
-              <label>Name</label>
-              <input type="text" onChange={changeSkillName} />
             </div>
-            <div className="dash-skill-icon">
-              <label>Icon</label>
-              <img src={replaceIcon} alt="skill-icon" className="replace-icon" width={50} height={50} />
-              <input type="file" accept="image/*" className="upload-image" onChange={changeImg} />
+          )))}
+          {showNewSkillInput ? (
+            <div className="dash-single-skill">
+              <p>New Skill:</p>
+              <div className="dash-skill-name">
+                <label>Name</label>
+                <input type="text" onChange={changeSkillName} />
+              </div>
+              <div className="dash-skill-icon">
+                <label>Icon</label>
+                <img src={replaceIcon} alt="skill-icon" className="replace-icon" width={50} height={50} />
+                <input type="file" accept="image/*" className="upload-image" onChange={changeImg} />
+              </div>
+              <button onClick={handleCancle}>Cancel</button>
+              <button onClick={addSkill}>ADD</button>
             </div>
-            <button onClick={handleCancle}>Cancel</button>
-            <button onClick={addSkill}>ADD</button>
-          </div>
-        ) : !showNewSkillInput && (
-          <button onClick={handleAddSkill}>ADD SKILL</button>
-        )}
-                  </div>
+          ) : !showNewSkillInput && (
+            <button onClick={handleAddSkill}>ADD SKILL</button>
+          )}
+        </div>
       </div>
     </fieldset>
 
   );
- 
+
 }
 export default DashboardSkills;

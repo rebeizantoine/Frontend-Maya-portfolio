@@ -7,7 +7,7 @@ function DashboardProjects() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/projects');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/projects`);
         setProjects(response.data.data);
       } catch (err) {
         console.error(err);
@@ -49,7 +49,7 @@ function DashboardProjects() {
     try {
       const project = projects.find((p) => p._id === projectId);
       const response = await axios.put(
-        `http://localhost:5000/api/projects/update/${projectId}`,
+        `${process.env.REACT_APP_API_URL}/api/projects/update/${projectId}`,
         JSON.stringify(project),
         {
           headers: { 'Content-Type': 'application/json' },

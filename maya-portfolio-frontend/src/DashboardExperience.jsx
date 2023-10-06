@@ -7,7 +7,7 @@ function DashboardExperience() {
 
   const fetchDatas = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/experiences');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/experiences`);
       const dataR = await response.json();
       // console.log(dataR);
       if (dataR.data.length > 0) {
@@ -26,7 +26,7 @@ function DashboardExperience() {
   const handelDelete = async (e) => {
     try {
       let id = e.target.name;
-      const d = await fetch(`http://localhost:5000/api/experiences/remove/${id}`, {
+      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/experiences/remove/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -42,7 +42,7 @@ function DashboardExperience() {
   const handelAdd = async (e) => {
     try {
       setShowAddNewExperience(false);
-      const d = await fetch(`http://localhost:5000/api/experiences/add`, {
+      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/experiences/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -62,7 +62,7 @@ function DashboardExperience() {
   const handleSave = async (e) => {
     let id = e.target.name;
     try {
-      const d = await fetch(`http://localhost:5000/api/experiences/update/${id}`, {
+      const d = await fetch(`${process.env.REACT_APP_API_URL}/api/experiences/update/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify({
