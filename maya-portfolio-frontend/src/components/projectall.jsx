@@ -5,7 +5,7 @@ import Index2 from './project2/index2';
 import Index3 from './project3/index3';
 import Index4 from './project4/index4';
 import Index5 from './project5/index5';
-
+import axios from 'axios';
 const Projectall = () => {
   const [projectsData, setProjectsData] = useState([]);
 
@@ -72,7 +72,7 @@ const Projectall = () => {
 
       <div className="projects-container">
         {projectsData.map((project, index) => (
-          <Link to={`/project${index + 1}`} state={{ data: projectsData }} key={project._id}>
+          <Link to={`./project${index + 1}`} state={{ data: projectsData }} key={project._id}>
             <div className="single-project">
               <img className="project-picture" src={project.mainPicture} alt={project.title} />
               <span className="alt-text-project">{project.title} <br />View details</span>
